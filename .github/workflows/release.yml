@@ -31,6 +31,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   upload-assets:
+    # create-release 在非 tag 事件会被跳过，加 always() 让 dispatch 也能跑（dry-run 编译验证）
+    if: always()
     needs: create-release
     strategy:
       fail-fast: false
