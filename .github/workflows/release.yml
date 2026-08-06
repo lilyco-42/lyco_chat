@@ -1,10 +1,14 @@
 # 交叉编译 + Release 发布 workflow
-# 照抄社区标准方案（taiki-e/upload-rust-binary-action 官方示例）：
+# 基于社区标准方案（taiki-e/upload-rust-binary-action 官方示例）：
 #   - create-gh-release-action 创建 Release
-#   - upload-rust-binary-action 用 cargo-zigbuild 交叉编译并上传
-#   - 产物命名 lyco_chat-{tag}-{target}，兼容 cargo-binstall 直接下载
-# 平台：Linux(x86_64/aarch64) + Android(aarch64/armv7/x86_64, Termux 用 aarch64)
-#        + Windows(x86_64/aarch64) + macOS(双架构/universal) + iOS(真机/模拟器)
+#   - upload-rust-binary-action 交叉编译并上传（binstall 兼容命名）
+#   - sccache 走 GitHub Actions 缓存服务加速编译
+# 平台：Linux(x86_64/aarch64, zigbuild) + Android(aarch64/armv7/x86_64, NDK;
+#         Termux 用 aarch64) + Windows(x86_64/aarch64) + macOS(双架构/universal)
+#        + iOS(真机 aarch64 + 模拟器 aarch64)
+#
+# 说明：Android 用 NDK 而非 zig，因为 reqwest 的 rustls 后端 aws-lc-sys
+# 用 zig 交叉编译 android 时找不到 bionic 头文件（sys/types.h）。
 
 name: release
 
@@ -19,70 +23,156 @@ on:
 
 jobs:
   create-release:
-    # 只有 tag 推送才建 Release；dispatch/PR 只是测试编译
+    # 只有 tag 推送才建 Release；workflow_dispatch 只是测试编译（dry-run）
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 需要给 create-gh-release-action 写 Release 权限
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  upload-assets:
-    # create-release 在非 tag 事件会被跳过，加 always() 让 dispatch 也能跑（dry-run 编译验证）
+  # ---- Linux（cargo-zigbuild，zig 交叉编译）----
+  linux:
+    # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    name: linux-${{ matrix.target }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        include:
-          # ---- Linux（cargo-zigbuild，zig 交叉编译）----
-          - target: x86_64-unknown-linux-gnu
-            os: ubuntu-latest
-            build-tool: cargo-zigbuild
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-latest
-            build-tool: cargo-zigbuild
-          # ---- Android（Termux 直接用 aarch64-linux-android 二进制）----
-          - target: aarch64-linux-android
-            os: ubuntu-latest
-            build-tool: cargo-zigbuild
-          - target: armv7-linux-androideabi
-            os: ubuntu-latest
-            build-tool: cargo-zigbuild
-          - target: x86_64-linux-android
-            os: ubuntu-latest
-            build-tool: cargo-zigbuild
-          # ---- Windows（msvc，本机原生）----
-          - target: x86_64-pc-windows-msvc
-            os: windows-latest
-          - target: aarch64-pc-windows-msvc
-            os: windows-latest
-          # ---- macOS（原生 Xcode；逗号分隔 = lipo universal）----
-          - target: aarch64-apple-darwin
-            os: macos-14
-          - target: x86_64-apple-darwin
-            os: macos-14
-          - target: x86_64-apple-darwin,aarch64-apple-darwin
-            os: macos-14
-          # ---- iOS（真机 + 模拟器 universal）----
-          - target: aarch64-apple-ios
-            os: macos-14
-          - target: x86_64-apple-ios,aarch64-apple-ios-sim
-            os: macos-14
-    runs-on: ${{ matrix.os }}
-    permissions:
-      contents: write # 上传 Release 资产
+        target: [x86_64-unknown-linux-gnu, aarch64-unknown-linux-gnu]
     steps:
       - uses: actions/checkout@v4
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.11
+      - name: Enable sccache for rust
+        run: |
+          echo "SCCACHE_GHA_ENABLED=true" >> "$GITHUB_ENV"
+          echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
       - uses: goto-bus-stop/setup-zig@v2
-        if: matrix.build-tool == 'cargo-zigbuild'
         with:
           version: 0.14.1
+      - uses: taiki-e/upload-rust-binary-action@v1
+        with:
+          bin: demo_chat
+          target: ${{ matrix.target }}
+          build-tool: cargo-zigbuild
+          archive: lyco_chat-$tag-$target
+          checksum: sha256
+          dry-run: ${{ github.ref_type != 'tag' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # ---- Android（NDK 交叉编译；Termux 直接跑 aarch64 二进制）----
+  android:
+    # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
+    if: always()
+    needs: create-release
+    name: android-${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [aarch64-linux-android, armv7-linux-androideabi, x86_64-linux-android]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.11
+      - name: Enable sccache for rust
+        run: |
+          echo "SCCACHE_GHA_ENABLED=true" >> "$GITHUB_ENV"
+          echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+      - uses: taiki-e/setup-cross-toolchain-action@v1
+        with:
+          target: ${{ matrix.target }}
+      - uses: taiki-e/upload-rust-binary-action@v1
+        with:
+          bin: demo_chat
+          target: ${{ matrix.target }}
+          archive: lyco_chat-$tag-$target
+          checksum: sha256
+          dry-run: ${{ github.ref_type != 'tag' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # ---- Windows（msvc，本机原生）----
+  windows:
+    # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
+    if: always()
+    needs: create-release
+    name: windows-${{ matrix.target }}
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [x86_64-pc-windows-msvc, aarch64-pc-windows-msvc]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.11
+      - name: Enable sccache for rust
+        run: |
+          echo "SCCACHE_GHA_ENABLED=true" >> "$GITHUB_ENV"
+          echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+      - uses: taiki-e/upload-rust-binary-action@v1
+        with:
+          bin: demo_chat
+          target: ${{ matrix.target }}
+          archive: lyco_chat-$tag-$target
+          checksum: sha256
+          dry-run: ${{ github.ref_type != 'tag' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # ---- macOS（原生 Xcode；universal = lipo 双架构）----
+  macos:
+    # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
+    if: always()
+    needs: create-release
+    name: macos-${{ matrix.target }}
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [aarch64-apple-darwin, x86_64-apple-darwin, universal-apple-darwin]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.11
+      - name: Enable sccache for rust
+        run: |
+          echo "SCCACHE_GHA_ENABLED=true" >> "$GITHUB_ENV"
+          echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+      - uses: taiki-e/upload-rust-binary-action@v1
+        with:
+          bin: demo_chat
+          target: ${{ matrix.target }}
+          archive: lyco_chat-$tag-$target
+          checksum: sha256
+          dry-run: ${{ github.ref_type != 'tag' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # ---- iOS（真机 aarch64 + 模拟器 aarch64）----
+  ios:
+    # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
+    if: always()
+    needs: create-release
+    name: ios-${{ matrix.target }}
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [aarch64-apple-ios, aarch64-apple-ios-sim]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.11
+      - name: Enable sccache for rust
+        run: |
+          echo "SCCACHE_GHA_ENABLED=true" >> "$GITHUB_ENV"
+          echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
       - name: iOS SDK env
-        if: contains(matrix.target, 'apple-ios')
         run: |
           if [[ "${{ matrix.target }}" == *"-sim"* ]]; then
             echo "SDKROOT=$(xcrun --sdk iphonesimulator --show-sdk-path)" >> "$GITHUB_ENV"
@@ -94,19 +184,15 @@ jobs:
         with:
           bin: demo_chat
           target: ${{ matrix.target }}
-          build-tool: ${{ matrix.build-tool || 'cargo' }}
           archive: lyco_chat-$tag-$target
-          tar: unix
-          zip: windows
           checksum: sha256
-          # 非 tag 事件（workflow_dispatch）只编译验证，不上传到 Release
           dry-run: ${{ github.ref_type != 'tag' }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
   # crates.io 发布（打 v* tag 时；需在仓库 Secrets 配 CARGO_REGISTRY_TOKEN）
   publish:
     if: startsWith(github.ref, 'refs/tags/')
-    needs: upload-assets
+    needs: [linux, android, windows, macos, ios]
     runs-on: ubuntu-latest
     environment: crates-io
     permissions:
