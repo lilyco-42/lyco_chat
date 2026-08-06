@@ -1,0 +1,7 @@
+model_path = "model/base_gpu.json"
+mode = "blocks"
+train_backend = "cpu"
+steps = 0
+infer_backend = "cpu"
+question = "声明函数"
+port = 8080

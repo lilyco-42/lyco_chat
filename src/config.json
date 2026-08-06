@@ -1,0 +1,9 @@
+{
+  "block_size": 16,
+  "embed_dim": 64,
+  "n_heads": 4,
+  "n_layers": 4,
+  "lr": 0.003,
+  "epochs": 15000,
+  "batch_size": 16
+}

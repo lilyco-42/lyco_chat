@@ -40,9 +40,9 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::config::CFG;
+use crate::core::config::CFG;
 use ndarray::Array2;
-use rand::{Rng, rngs::ThreadRng};
+use rand::{RngExt, rngs::ThreadRng};
 
 /// Data loader for batch generation.
 ///

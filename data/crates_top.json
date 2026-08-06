@@ -1,0 +1,2460 @@
+{
+ "hashbrown": {
+  "desc": "A Rust port of Google's SwissTable hash map",
+  "tags": [
+   "hash",
+   "hashmap",
+   "no_std",
+   "swisstable"
+  ],
+  "categories": [],
+  "downloads": 2113304859,
+  "version": "0.17.1"
+ },
+ "syn": {
+  "desc": "Parser for Rust source code",
+  "tags": [
+   "macros",
+   "syn"
+  ],
+  "categories": [],
+  "downloads": 2080237193,
+  "version": "3.0.3"
+ },
+ "getrandom": {
+  "desc": "A small cross-platform library for retrieving random data from system source",
+  "tags": [],
+  "categories": [
+   "os",
+   "no-std"
+  ],
+  "downloads": 1726556710,
+  "version": "0.4.3"
+ },
+ "bitflags": {
+  "desc": "A macro to generate structures which behave like bitflags.\n",
+  "tags": [
+   "bit",
+   "bitflags",
+   "bitmask",
+   "flags"
+  ],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 1628119736,
+  "version": "2.13.1"
+ },
+ "rand_core": {
+  "desc": "Core random number generation traits and tools for implementation.",
+  "tags": [
+   "random",
+   "rng"
+  ],
+  "categories": [
+   "algorithms",
+   "no-std"
+  ],
+  "downloads": 1513461075,
+  "version": "0.10.1"
+ },
+ "rand": {
+  "desc": "Random number generators and other randomness functionality.\n",
+  "tags": [
+   "random",
+   "rng"
+  ],
+  "categories": [],
+  "downloads": 1490179404,
+  "version": "0.10.2"
+ },
+ "libc": {
+  "desc": "Raw FFI bindings to platform libraries like libc.",
+  "tags": [
+   "bindings",
+   "ffi",
+   "libc",
+   "operating",
+   "system"
+  ],
+  "categories": [
+   "external-ffi-bindings",
+   "os",
+   "no-std"
+  ],
+  "downloads": 1448213754,
+  "version": "1.0.0-alpha.4"
+ },
+ "quote": {
+  "desc": "Quasi-quoting macro quote!(...)",
+  "tags": [
+   "macros",
+   "syn"
+  ],
+  "categories": [],
+  "downloads": 1431649981,
+  "version": "1.0.47"
+ },
+ "proc-macro2": {
+  "desc": "A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.",
+  "tags": [
+   "macros",
+   "syn"
+  ],
+  "categories": [
+   "development-tools::procedural-macro-helpers"
+  ],
+  "downloads": 1430699157,
+  "version": "1.0.107"
+ },
+ "base64": {
+  "desc": "encodes and decodes base64 as bytes or utf8",
+  "tags": [
+   "base64",
+   "decode",
+   "encode",
+   "no_std",
+   "utf8"
+  ],
+  "categories": [],
+  "downloads": 1405216991,
+  "version": "0.23.1"
+ },
+ "windows-sys": {
+  "desc": "Rust for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 1362301105,
+  "version": "0.61.2"
+ },
+ "indexmap": {
+  "desc": "A hash table with consistent order and fast iteration.",
+  "tags": [
+   "hashmap",
+   "no_std"
+  ],
+  "categories": [],
+  "downloads": 1361274493,
+  "version": "2.14.0"
+ },
+ "itertools": {
+  "desc": "Extra iterator adaptors, iterator methods, free functions, and macros.",
+  "tags": [
+   "data-structure",
+   "iterator",
+   "product",
+   "zip"
+  ],
+  "categories": [
+   "algorithms",
+   "rust-patterns",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 1340398237,
+  "version": "0.0.0"
+ },
+ "regex-syntax": {
+  "desc": "A regular expression parser.",
+  "tags": [],
+  "categories": [],
+  "downloads": 1302626211,
+  "version": "0.8.11"
+ },
+ "thiserror-impl": {
+  "desc": "Implementation detail of the `thiserror` crate",
+  "tags": [],
+  "categories": [],
+  "downloads": 1279570516,
+  "version": "2.0.19"
+ },
+ "thiserror": {
+  "desc": "derive(Error)",
+  "tags": [
+   "derive",
+   "error",
+   "error-handling"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std"
+  ],
+  "downloads": 1279337010,
+  "version": "0.0.0"
+ },
+ "cfg-if": {
+  "desc": "A macro to ergonomically define an item depending on a large number of #[cfg]\nparameters. Structured like an if-else chain, the first matching branch is the\nitem that gets emitted.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 1276705705,
+  "version": "1.0.4"
+ },
+ "serde": {
+  "desc": "A generic serialization/deserialization framework",
+  "tags": [
+   "no_std",
+   "serde",
+   "serialization"
+  ],
+  "categories": [],
+  "downloads": 1238936838,
+  "version": "1.0.229"
+ },
+ "memchr": {
+  "desc": "Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for\n1, 2 or 3 byte search and single substring search.\n",
+  "tags": [
+   "find",
+   "memchr",
+   "memmem",
+   "search",
+   "substring"
+  ],
+  "categories": [],
+  "downloads": 1233440237,
+  "version": "2.8.3"
+ },
+ "rand_chacha": {
+  "desc": "ChaCha random number generator\n",
+  "tags": [
+   "chacha",
+   "random",
+   "rng"
+  ],
+  "categories": [
+   "algorithms",
+   "no-std"
+  ],
+  "downloads": 1231224372,
+  "version": "0.10.0"
+ },
+ "unicode-ident": {
+  "desc": "Determine whether characters have the XID_Start or XID_Continue properties according to Unicode Standard Annex #31",
+  "tags": [
+   "unicode",
+   "xid"
+  ],
+  "categories": [
+   "development-tools::procedural-macro-helpers",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 1207093246,
+  "version": "1.0.24"
+ },
+ "itoa": {
+  "desc": "Fast integer primitive to string conversion",
+  "tags": [
+   "integer"
+  ],
+  "categories": [
+   "value-formatting",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 1181957027,
+  "version": "1.0.18"
+ },
+ "serde_derive": {
+  "desc": "Macros 1.1 implementation of #[derive(Serialize, Deserialize)]",
+  "tags": [
+   "derive",
+   "no_std",
+   "serde",
+   "serialization"
+  ],
+  "categories": [
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 1167283832,
+  "version": "1.0.229"
+ },
+ "autocfg": {
+  "desc": "Automatic cfg for Rust compiler features",
+  "tags": [
+   "autoconf",
+   "build",
+   "rustc"
+  ],
+  "categories": [
+   "development-tools::build-utils"
+  ],
+  "downloads": 1150427284,
+  "version": "1.5.1"
+ },
+ "heck": {
+  "desc": "heck is a case conversion library.",
+  "tags": [
+   "case",
+   "camel",
+   "snake",
+   "unicode",
+   "string"
+  ],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 1149732544,
+  "version": "0.5.0"
+ },
+ "serde_json": {
+  "desc": "A JSON serialization file format",
+  "tags": [
+   "json",
+   "serde",
+   "serialization"
+  ],
+  "categories": [
+   "encoding",
+   "parser-implementations",
+   "no-std"
+  ],
+  "downloads": 1143059530,
+  "version": "0.0.0"
+ },
+ "regex-automata": {
+  "desc": "Automata construction and matching using regular expressions.",
+  "tags": [
+   "automata",
+   "automaton",
+   "dfa",
+   "nfa",
+   "regex"
+  ],
+  "categories": [
+   "text-processing"
+  ],
+  "downloads": 1114926871,
+  "version": "0.4.18"
+ },
+ "once_cell": {
+  "desc": "Single assignment cells and lazy values.",
+  "tags": [
+   "lazy",
+   "static"
+  ],
+  "categories": [
+   "memory-management",
+   "rust-patterns"
+  ],
+  "downloads": 1114634169,
+  "version": "1.21.4"
+ },
+ "log": {
+  "desc": "A lightweight logging facade for Rust\n",
+  "tags": [
+   "logging"
+  ],
+  "categories": [],
+  "downloads": 1107020149,
+  "version": "0.4.33"
+ },
+ "cc": {
+  "desc": "A build-time dependency for Cargo build scripts to assist in invoking the native\nC compiler to compile native C code into a static archive to be linked into Rust\ncode.\n",
+  "tags": [
+   "build-dependencies"
+  ],
+  "categories": [],
+  "downloads": 1099821591,
+  "version": "1.4.0"
+ },
+ "socket2": {
+  "desc": "Utilities for handling networking sockets with a maximal amount of configuration\npossible intended.\n",
+  "tags": [
+   "io",
+   "network",
+   "socket"
+  ],
+  "categories": [],
+  "downloads": 1072406566,
+  "version": "0.6.5"
+ },
+ "smallvec": {
+  "desc": "'Small vector' optimization: store up to a small number of items on the stack",
+  "tags": [
+   "no_std",
+   "small",
+   "stack",
+   "vec",
+   "vector"
+  ],
+  "categories": [],
+  "downloads": 1043146830,
+  "version": "2.0.0-alpha.12"
+ },
+ "regex": {
+  "desc": "An implementation of regular expressions for Rust. This implementation uses\nfinite automata and guarantees linear time matching on all inputs.\n",
+  "tags": [],
+  "categories": [
+   "text-processing"
+  ],
+  "downloads": 1033804111,
+  "version": "0.0.0"
+ },
+ "clap": {
+  "desc": "A simple to use, efficient, and full-featured Command Line Argument Parser",
+  "tags": [
+   "arg",
+   "argument",
+   "cli",
+   "parse",
+   "parser"
+  ],
+  "categories": [],
+  "downloads": 1022562891,
+  "version": "4.6.5"
+ },
+ "ryu": {
+  "desc": "Fast floating point to string conversion",
+  "tags": [
+   "float"
+  ],
+  "categories": [
+   "value-formatting",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 1015248141,
+  "version": "1.0.23"
+ },
+ "aho-corasick": {
+  "desc": "Fast multiple substring searching.",
+  "tags": [
+   "multi",
+   "pattern",
+   "search",
+   "string",
+   "text"
+  ],
+  "categories": [],
+  "downloads": 1013771561,
+  "version": "1.1.5"
+ },
+ "rustix": {
+  "desc": "Safe Rust bindings to POSIX/Unix/Linux/Winsock-like syscalls",
+  "tags": [
+   "api",
+   "file",
+   "network",
+   "safe",
+   "syscall"
+  ],
+  "categories": [],
+  "downloads": 1009116785,
+  "version": "1.1.4"
+ },
+ "parking_lot_core": {
+  "desc": "An advanced API for creating custom synchronization primitives.",
+  "tags": [
+   "condvar",
+   "mutex",
+   "once",
+   "rwlock",
+   "thread"
+  ],
+  "categories": [
+   "concurrency"
+  ],
+  "downloads": 995031186,
+  "version": "0.9.12"
+ },
+ "windows_x86_64_msvc": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 977488415,
+  "version": "0.53.1"
+ },
+ "parking_lot": {
+  "desc": "More compact and efficient implementations of the standard synchronization primitives.",
+  "tags": [
+   "condvar",
+   "mutex",
+   "once",
+   "rwlock",
+   "thread"
+  ],
+  "categories": [],
+  "downloads": 968173447,
+  "version": "0.12.5"
+ },
+ "strsim": {
+  "desc": "Implementations of string similarity metrics. Includes Hamming, Levenshtein,\nOSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.\n",
+  "tags": [
+   "jaro",
+   "levenshtein",
+   "similarity",
+   "hamming",
+   "string"
+  ],
+  "categories": [],
+  "downloads": 966851689,
+  "version": "0.11.1"
+ },
+ "linux-raw-sys": {
+  "desc": "Generated bindings for Linux's userspace API",
+  "tags": [
+   "ffi",
+   "linux",
+   "uapi"
+  ],
+  "categories": [
+   "external-ffi-bindings"
+  ],
+  "downloads": 949650813,
+  "version": "0.12.1"
+ },
+ "windows_x86_64_gnu": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 942781018,
+  "version": "0.53.1"
+ },
+ "windows_aarch64_msvc": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 936475380,
+  "version": "0.53.1"
+ },
+ "windows_i686_msvc": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 935582491,
+  "version": "0.53.1"
+ },
+ "windows_i686_gnu": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 933666450,
+  "version": "0.53.1"
+ },
+ "windows-targets": {
+  "desc": "Import libs for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 926970809,
+  "version": "0.53.5"
+ },
+ "digest": {
+  "desc": "Traits for cryptographic hash functions and message authentication codes",
+  "tags": [
+   "crypto",
+   "digest",
+   "hash"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 925298516,
+  "version": "0.11.3"
+ },
+ "bytes": {
+  "desc": "Types and traits for working with bytes",
+  "tags": [
+   "buffers",
+   "io",
+   "zero-copy"
+  ],
+  "categories": [
+   "data-structures",
+   "network-programming"
+  ],
+  "downloads": 915783961,
+  "version": "1.12.1"
+ },
+ "mio": {
+  "desc": "Lightweight non-blocking I/O.",
+  "tags": [
+   "async",
+   "io",
+   "non-blocking"
+  ],
+  "categories": [
+   "asynchronous"
+  ],
+  "downloads": 912218454,
+  "version": "1.2.2"
+ },
+ "version_check": {
+  "desc": "Tiny crate to check the version of the installed/running rustc.",
+  "tags": [
+   "check",
+   "minimum",
+   "rustc",
+   "version"
+  ],
+  "categories": [],
+  "downloads": 906530720,
+  "version": "0.9.5"
+ },
+ "pin-project-lite": {
+  "desc": "A lightweight version of pin-project written with declarative macros.\n",
+  "tags": [
+   "macros",
+   "pin"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 903902752,
+  "version": "0.2.17"
+ },
+ "num-traits": {
+  "desc": "Numeric traits for generic mathematics",
+  "tags": [
+   "numerics",
+   "mathematics"
+  ],
+  "categories": [],
+  "downloads": 903187962,
+  "version": "0.2.19"
+ },
+ "block-buffer": {
+  "desc": "Buffer types for block processing of data",
+  "tags": [
+   "block",
+   "buffer"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 902390577,
+  "version": "0.12.1"
+ },
+ "http": {
+  "desc": "A set of types for representing HTTP requests and responses.\n",
+  "tags": [
+   "http"
+  ],
+  "categories": [
+   "web-programming"
+  ],
+  "downloads": 895439517,
+  "version": "1.5.0"
+ },
+ "either": {
+  "desc": "The enum `Either` with variants `Left` and `Right` is a general purpose sum type with two cases.\n",
+  "tags": [
+   "data-structure",
+   "no_std"
+  ],
+  "categories": [
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 892813984,
+  "version": "1.17.0"
+ },
+ "lazy_static": {
+  "desc": "A macro for declaring lazily evaluated statics in Rust.",
+  "tags": [
+   "lazy",
+   "macro",
+   "static"
+  ],
+  "categories": [
+   "memory-management",
+   "rust-patterns",
+   "no-std"
+  ],
+  "downloads": 891357702,
+  "version": "1.5.0"
+ },
+ "semver": {
+  "desc": "Parser and evaluator for Cargo's flavor of Semantic Versioning",
+  "tags": [
+   "cargo"
+  ],
+  "categories": [],
+  "downloads": 891153692,
+  "version": "1.0.28"
+ },
+ "windows_x86_64_gnullvm": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 888198810,
+  "version": "0.53.1"
+ },
+ "windows_aarch64_gnullvm": {
+  "desc": "Import lib for Windows",
+  "tags": [],
+  "categories": [
+   "os::windows-apis"
+  ],
+  "downloads": 888195066,
+  "version": "0.53.1"
+ },
+ "lock_api": {
+  "desc": "Wrappers to create fully-featured Mutex and RwLock types. Compatible with no_std.",
+  "tags": [
+   "lock",
+   "mutex",
+   "no_std",
+   "rwlock"
+  ],
+  "categories": [
+   "concurrency",
+   "no-std"
+  ],
+  "downloads": 883729754,
+  "version": "0.4.14"
+ },
+ "idna": {
+  "desc": "IDNA (Internationalizing Domain Names in Applications) and Punycode.",
+  "tags": [
+   "http",
+   "no-std",
+   "web"
+  ],
+  "categories": [],
+  "downloads": 860591061,
+  "version": "1.1.0"
+ },
+ "tokio": {
+  "desc": "An event-driven, non-blocking I/O platform for writing asynchronous I/O\nbacked applications.\n",
+  "tags": [
+   "async",
+   "futures",
+   "io",
+   "non-blocking"
+  ],
+  "categories": [],
+  "downloads": 856775142,
+  "version": "1.53.1"
+ },
+ "anyhow": {
+  "desc": "Flexible concrete Error type built on std::error::Error",
+  "tags": [
+   "error",
+   "error-handling"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std"
+  ],
+  "downloads": 853358860,
+  "version": "0.0.0"
+ },
+ "scopeguard": {
+  "desc": "A RAII scope guard that will run a given closure when it goes out of scope,\neven if the code between panics (assuming unwinding panic).\n\nDefines the macros `defer!`, `defer_on_unwind!`, `defer_on_success!` as\nshorthands for guards with one of the implemented strategies.\n",
+  "tags": [
+   "defer",
+   "unwind",
+   "panic",
+   "scope-guard"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std"
+  ],
+  "downloads": 845137220,
+  "version": "1.2.0"
+ },
+ "hyper": {
+  "desc": "A protective and efficient HTTP library for all.",
+  "tags": [
+   "http",
+   "hyper",
+   "hyperium"
+  ],
+  "categories": [],
+  "downloads": 818716288,
+  "version": "1.11.0"
+ },
+ "sha2": {
+  "desc": "Pure Rust implementation of the SHA-2 hash function family\nincluding SHA-224, SHA-256, SHA-384, and SHA-512.\n",
+  "tags": [
+   "digest",
+   "hash",
+   "sha2"
+  ],
+  "categories": [],
+  "downloads": 813818973,
+  "version": "0.11.0"
+ },
+ "rustls": {
+  "desc": "Rustls is a modern TLS library written in Rust.",
+  "tags": [],
+  "categories": [
+   "cryptography",
+   "network-programming"
+  ],
+  "downloads": 813670554,
+  "version": "0.24.0-dev.1"
+ },
+ "slab": {
+  "desc": "Pre-allocated storage for a uniform data type",
+  "tags": [
+   "allocator",
+   "no_std",
+   "slab"
+  ],
+  "categories": [],
+  "downloads": 812374405,
+  "version": "0.4.12"
+ },
+ "time": {
+  "desc": "Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].",
+  "tags": [
+   "calendar",
+   "date",
+   "duration",
+   "time"
+  ],
+  "categories": [
+   "date-and-time",
+   "value-formatting",
+   "parser-implementations",
+   "no-std"
+  ],
+  "downloads": 809774989,
+  "version": "0.3.55"
+ },
+ "crossbeam-utils": {
+  "desc": "Utilities for concurrent programming",
+  "tags": [
+   "atomic",
+   "cache",
+   "scoped",
+   "thread"
+  ],
+  "categories": [
+   "algorithms",
+   "concurrency",
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 807503614,
+  "version": "0.8.22"
+ },
+ "miniz_oxide": {
+  "desc": "DEFLATE compression and decompression library rewritten in Rust based on miniz",
+  "tags": [
+   "deflate",
+   "encoding",
+   "miniz",
+   "zlib"
+  ],
+  "categories": [],
+  "downloads": 807150408,
+  "version": "0.9.1"
+ },
+ "futures-core": {
+  "desc": "The core traits and types in for the `futures` library.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 806831186,
+  "version": "0.3.33"
+ },
+ "ppv-lite86": {
+  "desc": "Cross-platform cryptography-oriented low-level SIMD library.",
+  "tags": [
+   "crypto",
+   "simd",
+   "x86"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 801096017,
+  "version": "0.2.21"
+ },
+ "fastrand": {
+  "desc": "A simple and fast random number generator",
+  "tags": [
+   "fast",
+   "rand",
+   "random",
+   "simple",
+   "wyrand"
+  ],
+  "categories": [],
+  "downloads": 800877135,
+  "version": "2.5.0"
+ },
+ "cpufeatures": {
+  "desc": "Lightweight runtime CPU feature detection for aarch64, loongarch64, and x86/x86_64 targets,\nwith no_std support and support for mobile targets including Android and iOS\n",
+  "tags": [
+   "cpuid",
+   "target-feature"
+  ],
+  "categories": [
+   "hardware-support",
+   "no-std"
+  ],
+  "downloads": 798806513,
+  "version": "0.3.0"
+ },
+ "percent-encoding": {
+  "desc": "Percent encoding and decoding",
+  "tags": [],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 798708470,
+  "version": "2.3.2"
+ },
+ "toml": {
+  "desc": "A native Rust encoder and decoder of TOML-formatted files and streams. Provides\nimplementations of the standard Serialize/Deserialize traits for TOML data to\nfacilitate deserializing and serializing Rust structures.\n",
+  "tags": [
+   "encoding",
+   "no_std",
+   "toml"
+  ],
+  "categories": [],
+  "downloads": 797088496,
+  "version": "1.1.4+spec-1.1.0"
+ },
+ "futures-util": {
+  "desc": "Common utilities and extension traits for the futures-rs library.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 794729174,
+  "version": "0.3.33"
+ },
+ "futures-task": {
+  "desc": "Tools for working with tasks.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 793809281,
+  "version": "0.3.33"
+ },
+ "generic-array": {
+  "desc": "Generic types implementing functionality of arrays",
+  "tags": [
+   "array",
+   "generic"
+  ],
+  "categories": [
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 788545530,
+  "version": "1.4.4"
+ },
+ "zerocopy": {
+  "desc": "Zerocopy makes zero-cost memory manipulation effortless. We write \"unsafe\" so you don't have to.",
+  "tags": [
+   "cast",
+   "convert",
+   "transmutation",
+   "transmute",
+   "type-punning"
+  ],
+  "categories": [
+   "encoding",
+   "parsing",
+   "rust-patterns",
+   "embedded",
+   "no-std::no-alloc"
+  ],
+  "downloads": 784338297,
+  "version": "0.9.0-alpha.0"
+ },
+ "url": {
+  "desc": "URL library for Rust, based on the WHATWG URL Standard",
+  "tags": [
+   "parser",
+   "url"
+  ],
+  "categories": [],
+  "downloads": 781928255,
+  "version": "2.5.8"
+ },
+ "typenum": {
+  "desc": "Typenum is a Rust library for type-level numbers evaluated at\n    compile time. It currently supports bits, unsigned integers, and signed\n    integers. It also provides a type-level array of type-level numbers, but its\n    implementation is incomplete.",
+  "tags": [],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 781671236,
+  "version": "1.20.1"
+ },
+ "clap_lex": {
+  "desc": "Minimal, flexible command line parser",
+  "tags": [
+   "arg",
+   "argument",
+   "cli",
+   "parse",
+   "parser"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 778529356,
+  "version": "1.1.0"
+ },
+ "futures-sink": {
+  "desc": "The asynchronous `Sink` trait for the futures-rs library.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 768647763,
+  "version": "0.3.33"
+ },
+ "http-body": {
+  "desc": "Trait representing an asynchronous, streaming, HTTP request or response body.\n",
+  "tags": [
+   "http"
+  ],
+  "categories": [
+   "web-programming"
+  ],
+  "downloads": 768427118,
+  "version": "1.1.0"
+ },
+ "winnow": {
+  "desc": "A byte-oriented, zero-copy, parser combinators library",
+  "tags": [
+   "bit",
+   "parser",
+   "parser-combinators",
+   "parsing",
+   "streaming"
+  ],
+  "categories": [
+   "parsing"
+  ],
+  "downloads": 767495414,
+  "version": "1.0.4"
+ },
+ "futures-channel": {
+  "desc": "Channels for asynchronous communication using futures-rs.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 765028878,
+  "version": "0.3.33"
+ },
+ "tracing-core": {
+  "desc": "Core primitives for application-level tracing.\n",
+  "tags": [
+   "logging",
+   "profiling",
+   "tracing"
+  ],
+  "categories": [
+   "asynchronous",
+   "development-tools::debugging",
+   "development-tools::profiling"
+  ],
+  "downloads": 763740109,
+  "version": "0.1.36"
+ },
+ "tracing": {
+  "desc": "Application-level tracing for Rust.\n",
+  "tags": [
+   "async",
+   "logging",
+   "metrics",
+   "tracing"
+  ],
+  "categories": [],
+  "downloads": 753089156,
+  "version": "0.1.44"
+ },
+ "errno": {
+  "desc": "Cross-platform interface to the `errno` variable.",
+  "tags": [],
+  "categories": [
+   "os",
+   "no-std"
+  ],
+  "downloads": 734813501,
+  "version": "0.3.14"
+ },
+ "futures-io": {
+  "desc": "The `AsyncRead`, `AsyncWrite`, `AsyncSeek`, and `AsyncBufRead` traits for the futures-rs library.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 733103746,
+  "version": "0.3.33"
+ },
+ "crypto-common": {
+  "desc": "Common traits used by cryptographic algorithms",
+  "tags": [
+   "crypto",
+   "traits"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 730184792,
+  "version": "0.2.2"
+ },
+ "h2": {
+  "desc": "An HTTP/2 client and server",
+  "tags": [
+   "async",
+   "http",
+   "non-blocking"
+  ],
+  "categories": [
+   "asynchronous",
+   "network-programming",
+   "web-programming"
+  ],
+  "downloads": 729368794,
+  "version": "0.4.15"
+ },
+ "byteorder": {
+  "desc": "Library for reading/writing numbers in big-endian and little-endian.",
+  "tags": [
+   "little-endian",
+   "big-endian",
+   "endian",
+   "byte",
+   "binary"
+  ],
+  "categories": [
+   "encoding",
+   "parsing",
+   "no-std"
+  ],
+  "downloads": 727295339,
+  "version": "1.5.0"
+ },
+ "unicode-width": {
+  "desc": "Determine displayed width of `char` and `str` types\naccording to Unicode Standard Annex #11 rules.\n",
+  "tags": [
+   "text",
+   "unicode",
+   "width"
+  ],
+  "categories": [
+   "command-line-interface",
+   "text-processing",
+   "internationalization",
+   "no-std::no-alloc"
+  ],
+  "downloads": 721260250,
+  "version": "0.2.2"
+ },
+ "tempfile": {
+  "desc": "A library for managing temporary files and directories.",
+  "tags": [
+   "filesystem",
+   "tempfile",
+   "tmpfile"
+  ],
+  "categories": [],
+  "downloads": 720225448,
+  "version": "3.27.0"
+ },
+ "chrono": {
+  "desc": "Date and time library for Rust",
+  "tags": [
+   "calendar",
+   "date",
+   "time"
+  ],
+  "categories": [],
+  "downloads": 719315099,
+  "version": "0.4.45"
+ },
+ "toml_edit": {
+  "desc": "Yet another format-preserving TOML parser.",
+  "tags": [
+   "encoding",
+   "toml"
+  ],
+  "categories": [
+   "encoding",
+   "parsing",
+   "config",
+   "parser-implementations"
+  ],
+  "downloads": 716455309,
+  "version": "0.25.13+spec-1.1.0"
+ },
+ "fnv": {
+  "desc": "Fowler–Noll–Vo hash function",
+  "tags": [],
+  "categories": [],
+  "downloads": 715190510,
+  "version": "1.0.7"
+ },
+ "equivalent": {
+  "desc": "Traits for key comparison in maps.",
+  "tags": [
+   "hashmap",
+   "no_std"
+  ],
+  "categories": [
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 712747256,
+  "version": "1.0.2"
+ },
+ "uuid": {
+  "desc": "A library to generate and parse UUIDs.",
+  "tags": [
+   "guid",
+   "unique",
+   "uuid"
+  ],
+  "categories": [],
+  "downloads": 709579899,
+  "version": "1.24.0"
+ },
+ "nix": {
+  "desc": "Rust friendly bindings to *nix APIs",
+  "tags": [],
+  "categories": [
+   "os::unix-apis"
+  ],
+  "downloads": 708687752,
+  "version": "0.31.3"
+ },
+ "form_urlencoded": {
+  "desc": "Parser and serializer for the application/x-www-form-urlencoded syntax, as used by HTML forms.",
+  "tags": [],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 706914766,
+  "version": "1.2.2"
+ },
+ "shlex": {
+  "desc": "Split a string into shell words, like Python's shlex.",
+  "tags": [],
+  "categories": [
+   "command-line-interface",
+   "parser-implementations"
+  ],
+  "downloads": 704402281,
+  "version": "2.0.1"
+ },
+ "futures": {
+  "desc": "An implementation of futures and streams featuring zero allocations,\ncomposability, and iterator-like interfaces.\n",
+  "tags": [
+   "async",
+   "future",
+   "futures"
+  ],
+  "categories": [],
+  "downloads": 700031593,
+  "version": "0.3.33"
+ },
+ "ahash": {
+  "desc": "A non-cryptographic hash function using AES-NI for high performance",
+  "tags": [
+   "aes",
+   "hash",
+   "hasher",
+   "hashmap",
+   "no-std"
+  ],
+  "categories": [
+   "algorithms",
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 697686388,
+  "version": "0.8.12"
+ },
+ "tokio-macros": {
+  "desc": "Tokio's proc macros.\n",
+  "tags": [],
+  "categories": [
+   "asynchronous"
+  ],
+  "downloads": 696188572,
+  "version": "2.7.2"
+ },
+ "tokio-util": {
+  "desc": "Additional utilities for working with Tokio.\n",
+  "tags": [],
+  "categories": [
+   "asynchronous"
+  ],
+  "downloads": 695351704,
+  "version": "0.0.0"
+ },
+ "futures-macro": {
+  "desc": "The futures-rs procedural macro implementations.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 689552511,
+  "version": "0.3.33"
+ },
+ "rustc-hash": {
+  "desc": "A speedy, non-cryptographic hashing algorithm used by rustc",
+  "tags": [
+   "fxhash",
+   "hash",
+   "hasher",
+   "rustc"
+  ],
+  "categories": [],
+  "downloads": 688110689,
+  "version": "2.1.3"
+ },
+ "rustls-webpki": {
+  "desc": "Web PKI X.509 Certificate Verification.",
+  "tags": [],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 683391789,
+  "version": "0.104.0-alpha.7"
+ },
+ "tokio-rustls": {
+  "desc": "Asynchronous TLS/SSL streams for Tokio using Rustls.",
+  "tags": [],
+  "categories": [
+   "asynchronous",
+   "cryptography",
+   "network-programming"
+  ],
+  "downloads": 681910449,
+  "version": "0.26.4"
+ },
+ "wasi": {
+  "desc": "WASI API bindings for Rust",
+  "tags": [
+   "wasm",
+   "webassembly"
+  ],
+  "categories": [
+   "no-std",
+   "wasm"
+  ],
+  "downloads": 681205866,
+  "version": "0.14.7+wasi-0.2.4"
+ },
+ "memoffset": {
+  "desc": "offset_of functionality for Rust structs.",
+  "tags": [
+   "offsetof",
+   "mem",
+   "offset_of",
+   "offset"
+  ],
+  "categories": [
+   "no-std"
+  ],
+  "downloads": 679789597,
+  "version": "0.9.1"
+ },
+ "untrusted": {
+  "desc": "Safe, fast, zero-panic, zero-crashing, zero-allocation parsing of untrusted inputs in Rust.",
+  "tags": [],
+  "categories": [],
+  "downloads": 677910083,
+  "version": "0.9.0"
+ },
+ "clap_derive": {
+  "desc": "Parse command line argument by defining a struct, derive crate.",
+  "tags": [
+   "clap",
+   "cli",
+   "derive",
+   "parse",
+   "proc_macro"
+  ],
+  "categories": [
+   "command-line-interface",
+   "development-tools::procedural-macro-helpers"
+  ],
+  "downloads": 671412668,
+  "version": "4.6.4"
+ },
+ "toml_datetime": {
+  "desc": "A TOML-compatible datetime type",
+  "tags": [
+   "encoding",
+   "no_std",
+   "toml"
+  ],
+  "categories": [
+   "encoding",
+   "parsing",
+   "config",
+   "parser-implementations"
+  ],
+  "downloads": 667215773,
+  "version": "1.1.1+spec-1.1.0"
+ },
+ "pkg-config": {
+  "desc": "A library to run the pkg-config system tool at build time in order to be used in\nCargo build scripts.\n",
+  "tags": [
+   "build-dependencies"
+  ],
+  "categories": [],
+  "downloads": 665440274,
+  "version": "0.3.33"
+ },
+ "rustc_version": {
+  "desc": "A library for querying the version of a installed rustc compiler",
+  "tags": [
+   "rustc",
+   "version"
+  ],
+  "categories": [],
+  "downloads": 663376253,
+  "version": "0.4.1"
+ },
+ "rustversion": {
+  "desc": "Conditional compilation according to rustc compiler version",
+  "tags": [],
+  "categories": [
+   "no-std",
+   "development-tools::build-utils",
+   "no-std::no-alloc"
+  ],
+  "downloads": 660240390,
+  "version": "1.0.23"
+ },
+ "tracing-attributes": {
+  "desc": "Procedural macro attributes for automatically instrumenting functions.\n",
+  "tags": [
+   "instrument",
+   "log",
+   "logging",
+   "macro",
+   "tracing"
+  ],
+  "categories": [
+   "asynchronous",
+   "development-tools::debugging",
+   "development-tools::profiling"
+  ],
+  "downloads": 659723335,
+  "version": "0.1.31"
+ },
+ "ring": {
+  "desc": "An experiment.",
+  "tags": [
+   "crypto",
+   "cryptography",
+   "ecc",
+   "rand",
+   "rsa"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 658190939,
+  "version": "0.17.14"
+ },
+ "futures-executor": {
+  "desc": "Executors for asynchronous tasks based on the futures-rs library.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 655625197,
+  "version": "0.3.33"
+ },
+ "clap_builder": {
+  "desc": "A simple to use, efficient, and full-featured Command Line Argument Parser",
+  "tags": [
+   "arg",
+   "argument",
+   "cli",
+   "parse",
+   "parser"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 654328090,
+  "version": "4.6.5"
+ },
+ "pin-utils": {
+  "desc": "Utilities for pinning\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 650988215,
+  "version": "0.1.0"
+ },
+ "redox_syscall": {
+  "desc": "A Rust library to access raw Redox system calls",
+  "tags": [],
+  "categories": [],
+  "downloads": 649924503,
+  "version": "0.9.1"
+ },
+ "webpki-roots": {
+  "desc": "Mozilla's CA root certificates for use with webpki",
+  "tags": [],
+  "categories": [],
+  "downloads": 648304105,
+  "version": "1.0.9"
+ },
+ "signal-hook-registry": {
+  "desc": "Backend crate for signal-hook",
+  "tags": [
+   "daemon",
+   "signal",
+   "unix"
+  ],
+  "categories": [],
+  "downloads": 647194098,
+  "version": "1.4.8"
+ },
+ "anstyle": {
+  "desc": "ANSI text styling",
+  "tags": [
+   "ansi",
+   "color",
+   "no_std",
+   "terminal"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 643081730,
+  "version": "1.0.14"
+ },
+ "nom": {
+  "desc": "A byte-oriented, zero-copy, parser combinators library",
+  "tags": [
+   "bit",
+   "parser",
+   "parser-combinators",
+   "parsing",
+   "streaming"
+  ],
+  "categories": [
+   "parsing"
+  ],
+  "downloads": 642557288,
+  "version": "8.0.0"
+ },
+ "httparse": {
+  "desc": "A tiny, safe, speedy, zero-copy HTTP/1.x parser.",
+  "tags": [
+   "http",
+   "no_std",
+   "parser"
+  ],
+  "categories": [],
+  "downloads": 637806065,
+  "version": "1.10.1"
+ },
+ "tinyvec": {
+  "desc": "`tinyvec` provides 100% safe vec-like data structures.",
+  "tags": [
+   "no-std",
+   "no_std",
+   "vec"
+  ],
+  "categories": [
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 636182754,
+  "version": "1.12.0"
+ },
+ "darling_macro": {
+  "desc": "Internal support for a proc-macro library for reading attributes into structs when\nimplementing custom derives. Use https://crates.io/crates/darling in your code.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 631656127,
+  "version": "0.24.0"
+ },
+ "darling_core": {
+  "desc": "Helper crate for proc-macro library for reading attributes into structs when\nimplementing custom derives. Use https://crates.io/crates/darling in your code.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 631572418,
+  "version": "0.24.0"
+ },
+ "darling": {
+  "desc": "A proc-macro library for reading attributes into structs when\nimplementing custom derives.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 631458425,
+  "version": "0.24.0"
+ },
+ "reqwest": {
+  "desc": "higher level HTTP client library",
+  "tags": [
+   "client",
+   "http",
+   "request"
+  ],
+  "categories": [],
+  "downloads": 624939790,
+  "version": "0.13.4"
+ },
+ "subtle": {
+  "desc": "Pure-Rust traits and utilities for constant-time cryptographic implementations.",
+  "tags": [
+   "constant-time",
+   "crypto",
+   "cryptography",
+   "utilities"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 619011068,
+  "version": "2.6.1"
+ },
+ "thread_local": {
+  "desc": "Per-object thread-local storage",
+  "tags": [
+   "concurrent",
+   "thread",
+   "thread_local"
+  ],
+  "categories": [],
+  "downloads": 616822588,
+  "version": "1.1.10"
+ },
+ "num-integer": {
+  "desc": "Integer traits and functions",
+  "tags": [
+   "mathematics",
+   "numerics"
+  ],
+  "categories": [
+   "algorithms",
+   "science",
+   "no-std"
+  ],
+  "downloads": 610386650,
+  "version": "0.1.46"
+ },
+ "time-macros": {
+  "desc": "    Procedural macros for the time crate.\n    This crate is an implementation detail and should not be relied upon directly.\n",
+  "tags": [
+   "calendar",
+   "date",
+   "duration",
+   "time"
+  ],
+  "categories": [
+   "date-and-time"
+  ],
+  "downloads": 608033440,
+  "version": "0.2.32"
+ },
+ "crc32fast": {
+  "desc": "Fast, SIMD-accelerated CRC32 (IEEE) checksum computation",
+  "tags": [
+   "crc",
+   "crc32",
+   "fast",
+   "hash",
+   "simd"
+  ],
+  "categories": [],
+  "downloads": 606740574,
+  "version": "1.5.0"
+ },
+ "zeroize": {
+  "desc": "Securely clear secrets from memory with a simple trait built on\nstable Rust primitives which guarantee memory is zeroed using an\noperation will not be 'optimized away' by the compiler.\nUses a portable pure Rust implementation that works everywhere,\neven WASM!\n",
+  "tags": [
+   "memory",
+   "memset",
+   "secure",
+   "volatile",
+   "zero"
+  ],
+  "categories": [
+   "cryptography",
+   "memory-management",
+   "os",
+   "no-std"
+  ],
+  "downloads": 602781821,
+  "version": "1.9.0"
+ },
+ "flate2": {
+  "desc": "DEFLATE compression and decompression exposed as Read/BufRead/Write streams.\nSupports miniz_oxide and multiple zlib implementations. Supports zlib, gzip,\nand raw deflate streams.\n",
+  "tags": [
+   "deflate",
+   "encoding",
+   "gzip",
+   "zlib",
+   "zlib-ng"
+  ],
+  "categories": [],
+  "downloads": 601552987,
+  "version": "1.1.9"
+ },
+ "synstructure": {
+  "desc": "Helper methods and macros for custom derives",
+  "tags": [
+   "derive",
+   "enum",
+   "expand_substructure",
+   "macros",
+   "syn"
+  ],
+  "categories": [],
+  "downloads": 599147481,
+  "version": "0.14.0"
+ },
+ "anstream": {
+  "desc": "IO stream adapters for writing colored text that will gracefully degrade according to your terminal's capabilities.",
+  "tags": [
+   "ansi",
+   "color",
+   "strip",
+   "terminal",
+   "wincon"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 595488817,
+  "version": "1.0.0"
+ },
+ "iana-time-zone": {
+  "desc": "get the IANA time zone for the current system",
+  "tags": [
+   "iana",
+   "time"
+  ],
+  "categories": [
+   "date-and-time",
+   "os",
+   "internationalization"
+  ],
+  "downloads": 592918134,
+  "version": "0.1.65"
+ },
+ "spin": {
+  "desc": "Spin-based synchronization primitives",
+  "tags": [
+   "mutex",
+   "rwlock",
+   "spinlock"
+  ],
+  "categories": [],
+  "downloads": 591992926,
+  "version": "0.12.2"
+ },
+ "async-trait": {
+  "desc": "Type erasure for async trait methods",
+  "tags": [
+   "async"
+  ],
+  "categories": [],
+  "downloads": 587136279,
+  "version": "0.1.91"
+ },
+ "crossbeam-epoch": {
+  "desc": "Epoch-based garbage collection",
+  "tags": [
+   "atomic",
+   "garbage",
+   "lock-free",
+   "rcu"
+  ],
+  "categories": [
+   "concurrency",
+   "memory-management",
+   "no-std"
+  ],
+  "downloads": 583774542,
+  "version": "0.9.20"
+ },
+ "anstyle-parse": {
+  "desc": "Parse ANSI Style Escapes",
+  "tags": [
+   "ansi",
+   "color",
+   "terminal",
+   "vte"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 582284256,
+  "version": "1.0.0"
+ },
+ "tinyvec_macros": {
+  "desc": "Some macros for tiny containers",
+  "tags": [],
+  "categories": [],
+  "downloads": 579610692,
+  "version": "0.1.1"
+ },
+ "tower": {
+  "desc": "Tower is a library of modular and reusable components for building robust\nclients and servers.\n",
+  "tags": [
+   "async",
+   "futures",
+   "io",
+   "non-blocking",
+   "service"
+  ],
+  "categories": [
+   "asynchronous",
+   "network-programming"
+  ],
+  "downloads": 577425100,
+  "version": "0.0.0"
+ },
+ "hex": {
+  "desc": "Encoding and decoding data into/from hexadecimal representation.",
+  "tags": [
+   "hex",
+   "no_std"
+  ],
+  "categories": [
+   "encoding",
+   "no-std"
+  ],
+  "downloads": 576766069,
+  "version": "0.4.3"
+ },
+ "anstyle-query": {
+  "desc": "Look up colored console capabilities",
+  "tags": [
+   "ansi",
+   "cli",
+   "color",
+   "no-std",
+   "terminal"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 569964191,
+  "version": "1.1.5"
+ },
+ "strum_macros": {
+  "desc": "Helpful macros for working with enums and strings",
+  "tags": [
+   "enum",
+   "macros",
+   "proc-macros",
+   "string"
+  ],
+  "categories": [
+   "parsing",
+   "development-tools::procedural-macro-helpers"
+  ],
+  "downloads": 569285831,
+  "version": "0.28.0"
+ },
+ "time-core": {
+  "desc": "This crate is an implementation detail and should not be relied upon directly.",
+  "tags": [
+   "calendar",
+   "date",
+   "duration",
+   "time"
+  ],
+  "categories": [
+   "date-and-time"
+  ],
+  "downloads": 568986103,
+  "version": "0.1.9"
+ },
+ "colorchoice": {
+  "desc": "Global override of color control",
+  "tags": [
+   "ansi",
+   "cli",
+   "color",
+   "no-std",
+   "terminal"
+  ],
+  "categories": [
+   "command-line-interface"
+  ],
+  "downloads": 568348614,
+  "version": "1.0.5"
+ },
+ "stable_deref_trait": {
+  "desc": "An unsafe marker trait for types like Box and Rc that dereference to a stable address even when moved, and hence can be used with libraries such as owning_ref and rental.\n",
+  "tags": [],
+  "categories": [
+   "memory-management",
+   "no-std"
+  ],
+  "downloads": 563187346,
+  "version": "1.2.1"
+ },
+ "tower-service": {
+  "desc": "Trait representing an asynchronous, request / response based, client or server.\n",
+  "tags": [],
+  "categories": [
+   "asynchronous",
+   "network-programming"
+  ],
+  "downloads": 563168531,
+  "version": "0.3.3"
+ },
+ "sync_wrapper": {
+  "desc": "A tool for enlisting the compiler's help in proving the absence of concurrency",
+  "tags": [
+   "concurrency"
+  ],
+  "categories": [
+   "concurrency"
+  ],
+  "downloads": 562570778,
+  "version": "1.0.2"
+ },
+ "strum": {
+  "desc": "Helpful macros for working with enums and strings",
+  "tags": [
+   "enum",
+   "macros",
+   "proc-macros",
+   "string"
+  ],
+  "categories": [
+   "parsing",
+   "development-tools::procedural-macro-helpers"
+  ],
+  "downloads": 561989083,
+  "version": "0.28.0"
+ },
+ "want": {
+  "desc": "Detect when another Future wants a result.",
+  "tags": [
+   "channel",
+   "futures",
+   "async"
+  ],
+  "categories": [],
+  "downloads": 560558055,
+  "version": "0.3.1"
+ },
+ "hyper-rustls": {
+  "desc": "Rustls+hyper integration for pure rust HTTPS",
+  "tags": [],
+  "categories": [],
+  "downloads": 559908662,
+  "version": "0.27.9"
+ },
+ "try-lock": {
+  "desc": "A lightweight atomic lock.",
+  "tags": [
+   "atomic",
+   "lock"
+  ],
+  "categories": [
+   "concurrency",
+   "no-std"
+  ],
+  "downloads": 559809998,
+  "version": "0.2.5"
+ },
+ "object": {
+  "desc": "A unified interface for reading and writing object file formats.",
+  "tags": [
+   "coff",
+   "elf",
+   "mach-o",
+   "object",
+   "pe"
+  ],
+  "categories": [],
+  "downloads": 558106195,
+  "version": "0.40.0"
+ },
+ "crossbeam-deque": {
+  "desc": "Concurrent work-stealing deque",
+  "tags": [
+   "chase-lev",
+   "lock-free",
+   "scheduler",
+   "scheduling"
+  ],
+  "categories": [
+   "algorithms",
+   "concurrency",
+   "data-structures"
+  ],
+  "downloads": 557082212,
+  "version": "0.8.7"
+ },
+ "unicode-xid": {
+  "desc": "Determine whether characters have the XID_Start\nor XID_Continue properties according to\nUnicode Standard Annex #31.\n",
+  "tags": [
+   "text",
+   "unicode",
+   "xid"
+  ],
+  "categories": [],
+  "downloads": 555354404,
+  "version": "0.2.6"
+ },
+ "walkdir": {
+  "desc": "Recursively walk a directory.",
+  "tags": [
+   "directory",
+   "walk",
+   "recursive",
+   "iterator"
+  ],
+  "categories": [],
+  "downloads": 550390897,
+  "version": "2.5.0"
+ },
+ "num_cpus": {
+  "desc": "Get the number of CPUs on a machine.",
+  "tags": [
+   "cores",
+   "cpu",
+   "cpus"
+  ],
+  "categories": [],
+  "downloads": 549221757,
+  "version": "1.17.0"
+ },
+ "mime": {
+  "desc": "Strongly Typed Mimes",
+  "tags": [
+   "mime",
+   "media-extensions",
+   "media-types"
+  ],
+  "categories": [],
+  "downloads": 544287438,
+  "version": "0.3.17"
+ },
+ "utf8parse": {
+  "desc": "Table-driven UTF-8 parser",
+  "tags": [
+   "parse",
+   "table",
+   "utf8"
+  ],
+  "categories": [
+   "parsing",
+   "no-std"
+  ],
+  "downloads": 543357445,
+  "version": "0.2.2"
+ },
+ "glob": {
+  "desc": "Support for matching file paths against Unix shell style patterns.\n",
+  "tags": [],
+  "categories": [
+   "filesystem"
+  ],
+  "downloads": 542373393,
+  "version": "0.3.4"
+ },
+ "tracing-subscriber": {
+  "desc": "Utilities for implementing and composing `tracing` subscribers.\n",
+  "tags": [
+   "logging",
+   "metrics",
+   "subscriber",
+   "tracing"
+  ],
+  "categories": [
+   "asynchronous",
+   "development-tools::debugging",
+   "development-tools::profiling"
+  ],
+  "downloads": 536296411,
+  "version": "0.3.23"
+ },
+ "crossbeam-channel": {
+  "desc": "Multi-producer multi-consumer channels for message passing",
+  "tags": [
+   "channel",
+   "golang",
+   "message",
+   "mpmc",
+   "select"
+  ],
+  "categories": [
+   "algorithms",
+   "concurrency",
+   "data-structures"
+  ],
+  "downloads": 535385298,
+  "version": "0.5.16"
+ },
+ "openssl-probe": {
+  "desc": "A library for helping to find system-wide trust anchor (\"root\") certificate\nlocations based on paths typically used by `openssl`.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 531430578,
+  "version": "0.2.1"
+ },
+ "same-file": {
+  "desc": "A simple crate for determining whether two file paths point to the same file.\n",
+  "tags": [
+   "same",
+   "equal",
+   "inode",
+   "file"
+  ],
+  "categories": [],
+  "downloads": 531000162,
+  "version": "1.0.6"
+ },
+ "httpdate": {
+  "desc": "HTTP date parsing and formatting",
+  "tags": [
+   "date",
+   "http",
+   "time",
+   "simple",
+   "timestamp"
+  ],
+  "categories": [],
+  "downloads": 527447400,
+  "version": "1.0.3"
+ },
+ "pin-project-internal": {
+  "desc": "Implementation detail of the `pin-project` crate.\n",
+  "tags": [
+   "attribute",
+   "macros",
+   "pin"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 527367681,
+  "version": "1.1.13"
+ },
+ "pin-project": {
+  "desc": "A crate for safe and ergonomic pin-projection.\n",
+  "tags": [
+   "attribute",
+   "macros",
+   "pin"
+  ],
+  "categories": [
+   "rust-patterns",
+   "no-std",
+   "no-std::no-alloc"
+  ],
+  "downloads": 527316734,
+  "version": "1.1.13"
+ },
+ "deranged": {
+  "desc": "Ranged integers",
+  "tags": [
+   "int",
+   "integer",
+   "range"
+  ],
+  "categories": [],
+  "downloads": 524614012,
+  "version": "0.5.8"
+ },
+ "prost": {
+  "desc": "A Protocol Buffers implementation for the Rust Language.",
+  "tags": [
+   "protobuf",
+   "serialization"
+  ],
+  "categories": [],
+  "downloads": 520374700,
+  "version": "0.14.4"
+ },
+ "unicode-normalization": {
+  "desc": "This crate provides functions for normalization of\nUnicode strings, including Canonical and Compatible\nDecomposition and Recomposition, as described in\nUnicode Standard Annex #15.\n",
+  "tags": [
+   "decomposition",
+   "normalization",
+   "recomposition",
+   "text",
+   "unicode"
+  ],
+  "categories": [],
+  "downloads": 519912941,
+  "version": "0.1.25"
+ },
+ "env_logger": {
+  "desc": "A logging implementation for `log` which is configured via an environment\nvariable.\n",
+  "tags": [
+   "log",
+   "logger",
+   "logging"
+  ],
+  "categories": [],
+  "downloads": 519629800,
+  "version": "0.11.11"
+ },
+ "rustc-demangle": {
+  "desc": "Rust compiler symbol demangling.\n",
+  "tags": [],
+  "categories": [],
+  "downloads": 518498476,
+  "version": "0.1.28"
+ },
+ "zerocopy-derive": {
+  "desc": "Custom derive for traits from the zerocopy crate",
+  "tags": [],
+  "categories": [],
+  "downloads": 518251923,
+  "version": "0.9.0-alpha.0"
+ },
+ "gimli": {
+  "desc": "A library for reading and writing the DWARF debugging format.",
+  "tags": [
+   "debug",
+   "dwarf",
+   "eh_frame",
+   "elf"
+  ],
+  "categories": [
+   "development-tools::debugging",
+   "development-tools::profiling",
+   "parser-implementations"
+  ],
+  "downloads": 518084084,
+  "version": "0.34.0"
+ },
+ "num-bigint": {
+  "desc": "Big integer implementation for Rust",
+  "tags": [
+   "bignum",
+   "mathematics",
+   "numerics"
+  ],
+  "categories": [],
+  "downloads": 517276642,
+  "version": "0.5.1"
+ },
+ "prost-derive": {
+  "desc": "Generate encoding and decoding implementations for Prost annotated types.",
+  "tags": [],
+  "categories": [],
+  "downloads": 511005884,
+  "version": "0.14.4"
+ },
+ "ipnet": {
+  "desc": "Provides types and useful methods for working with IPv4 and IPv6 network addresses, commonly called IP prefixes. The new `IpNet`, `Ipv4Net`, and `Ipv6Net` types build on the existing `IpAddr`, `Ipv4Addr`, and `Ipv6Addr` types already provided in Rust's standard library and align to their design to stay consistent. The module also provides useful traits that extend `Ipv4Addr` and `Ipv6Addr` with methods for `Add`, `Sub`, `BitAnd`, and `BitOr` operations. The module only uses stable feature so it is guaranteed to compile using the stable toolchain.",
+  "tags": [
+   "cidr",
+   "ip",
+   "network",
+   "prefix",
+   "subnet"
+  ],
+  "categories": [
+   "network-programming"
+  ],
+  "downloads": 508651995,
+  "version": "2.12.1"
+ },
+ "phf_shared": {
+  "desc": "Support code shared by PHF libraries",
+  "tags": [],
+  "categories": [
+   "data-structures"
+  ],
+  "downloads": 507176643,
+  "version": "0.14.0"
+ },
+ "bumpalo": {
+  "desc": "A fast bump allocation arena for Rust.",
+  "tags": [
+   "allocator",
+   "arena",
+   "bump"
+  ],
+  "categories": [],
+  "downloads": 507006757,
+  "version": "3.20.3"
+ },
+ "hmac": {
+  "desc": "Generic implementation of Hash-based Message Authentication Code (HMAC)",
+  "tags": [
+   "crypto",
+   "digest",
+   "hmac",
+   "mac"
+  ],
+  "categories": [
+   "cryptography",
+   "no-std"
+  ],
+  "downloads": 504386965,
+  "version": "0.13.0"
+ },
+ "hermit-abi": {
+  "desc": "Hermit system calls definitions.",
+  "tags": [
+   "libos",
+   "unikernel"
+  ],
+  "categories": [
+   "os"
+  ],
+  "downloads": 502769659,
+  "version": "0.5.2"
+ },
+ "rustls-pemfile": {
+  "desc": "Basic .pem file parser for keys and certificates",
+  "tags": [],
+  "categories": [
+   "cryptography",
+   "network-programming"
+  ],
+  "downloads": 499436994,
+  "version": "2.2.0"
+ },
+ "arrayvec": {
+  "desc": "A vector with fixed capacity, backed by an array (it can be stored on the stack too). Implements fixed capacity ArrayVec and ArrayString.",
+  "tags": [
+   "array",
+   "data-structure",
+   "no_std",
+   "stack",
+   "vector"
+  ],
+  "categories": [
+   "data-structures",
+   "no-std"
+  ],
+  "downloads": 498830551,
+  "version": "0.7.8"
+ },
+ "serde_urlencoded": {
+  "desc": "`x-www-form-urlencoded` meets Serde",
+  "tags": [
+   "urlencoded",
+   "serialization",
+   "serde"
+  ],
+  "categories": [
+   "encoding",
+   "web-programming"
+  ],
+  "downloads": 497616996,
+  "version": "0.7.1"
+ },
+ "displaydoc": {
+  "desc": "A derive macro for implementing the display Trait via a doc comment and string interpolation\n",
+  "tags": [
+   "derive",
+   "display"
+  ],
+  "categories": [],
+  "downloads": 490982181,
+  "version": "0.2.7"
+ },
+ "unicode-segmentation": {
+  "desc": "This crate provides Grapheme Cluster, Word and Sentence boundaries\naccording to Unicode Standard Annex #29 rules.\n",
+  "tags": [
+   "boundary",
+   "grapheme",
+   "text",
+   "unicode",
+   "word"
+  ],
+  "categories": [],
+  "downloads": 487797419,
+  "version": "1.13.3"
+ },
+ "axum": {
+  "desc": "HTTP routing and request handling library that focuses on ergonomics and modularity",
+  "tags": [
+   "http",
+   "routing",
+   "web"
+  ],
+  "categories": [
+   "asynchronous",
+   "network-programming",
+   "web-programming::http-server"
+  ],
+  "downloads": 413865026,
+  "version": "0.0.0"
+ },
+ "actix-web": {
+  "desc": "Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust",
+  "tags": [
+   "actix",
+   "async",
+   "framework",
+   "http",
+   "web"
+  ],
+  "categories": [
+   "asynchronous",
+   "network-programming",
+   "web-programming::http-server",
+   "web-programming::websocket"
+  ],
+  "downloads": 76001426,
+  "version": "0.0.0"
+ },
+ "warp": {
+  "desc": "serve the web at warp speeds",
+  "tags": [
+   "http",
+   "hyper",
+   "server",
+   "warp"
+  ],
+  "categories": [
+   "web-programming::http-server"
+  ],
+  "downloads": 45552443,
+  "version": "0.0.0"
+ },
+ "rocket": {
+  "desc": "Web framework with a focus on usability, security, extensibility, and speed.\n",
+  "tags": [
+   "rocket",
+   "server",
+   "web",
+   "framework"
+  ],
+  "categories": [
+   "web-programming::http-server"
+  ],
+  "downloads": 12445762,
+  "version": "0.0.0"
+ },
+ "tonic": {
+  "desc": "A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.\n",
+  "tags": [
+   "async",
+   "futures",
+   "grpc",
+   "protobuf",
+   "rpc"
+  ],
+  "categories": [
+   "asynchronous",
+   "network-programming",
+   "web-programming"
+  ],
+  "downloads": 349447233,
+  "version": "0.0.0"
+ }
+}

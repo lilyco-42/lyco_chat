@@ -1,1 +1,17 @@
 /target
+/.cargo
+
+# trained model artifacts (reproducible via training; 5.7MB)
+/model
+
+# raw scraped corpora (regenerate with tools/wash_data.py)
+/data/washed
+
+# runtime logs / learning state
+/data/startup_times.log
+
+# editor / backup noise
+*.bak
+* copy*
+*.swp
+.DS_Store

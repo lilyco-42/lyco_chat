@@ -1,0 +1,791 @@
+[
+  {
+    "category": "数据库接口",
+    "description": "Interface with database management systems.",
+    "keywords": [
+      "数据库",
+      "sql",
+      "sqlite",
+      "mysql",
+      "postgres",
+      "redis",
+      "mongo",
+      "db"
+    ],
+    "crates": [
+      "rusqlite",
+      "sqlx",
+      "redis",
+      "sea-orm",
+      "diesel",
+      "rocksdb",
+      "mongodb"
+    ]
+  },
+  {
+    "category": "多媒体",
+    "description": "Audio, video, and image processing or rendering engines.",
+    "keywords": [
+      "音视频",
+      "音频",
+      "视频",
+      "音乐",
+      "播放",
+      "处理",
+      "媒体",
+      "audio",
+      "video",
+      "movie"
+    ],
+    "crates": [
+      "symphonia",
+      "rubato",
+      "rodio",
+      "ffmpeg-next",
+      "gstreamer"
+    ]
+  },
+  {
+    "category": "神经网络",
+    "description": "AI, ML, neural networks, tensors.",
+    "keywords": [
+      "神经",
+      "神经网络",
+      "ai",
+      "机器学习",
+      "tensor",
+      "模型",
+      "推理",
+      "llm"
+    ],
+    "crates": [
+      "candle-nn",
+      "tract-onnx",
+      "ort",
+      "burn",
+      "genai",
+      "tokenizers"
+    ]
+  },
+  {
+    "category": "压缩",
+    "description": "Algorithms for making data smaller.",
+    "keywords": [
+      "压缩",
+      "zip",
+      "gzip",
+      "compress",
+      "解压"
+    ],
+    "crates": [
+      "zip",
+      "flate2",
+      "lz4_flex",
+      "miniz_oxide"
+    ]
+  },
+  {
+    "category": "编码数据",
+    "description": "Encoding and/or decoding data from one data format to another.",
+    "keywords": [
+      "编码",
+      "json",
+      "yaml",
+      "toml",
+      "base64",
+      "csv",
+      "decode",
+      "encode",
+      "解析",
+      "序列化",
+      "serde",
+      "parse"
+    ],
+    "crates": [
+      "serde_json",
+      "prost",
+      "ron",
+      "base64",
+      "serde",
+      "csv",
+      "toml"
+    ]
+  },
+  {
+    "category": "HTTP 客户端",
+    "description": "Make HTTP network requests.",
+    "keywords": [
+      "请求",
+      "http 请求",
+      "客户端",
+      "request",
+      "get",
+      "http",
+      "reqwest"
+    ],
+    "crates": [
+      "ureq",
+      "reqwest",
+      "octocrab",
+      "reqwest-middleware"
+    ]
+  },
+  {
+    "category": "HTTP 服务",
+    "description": "Server-side programming.",
+    "keywords": [
+      "服务",
+      "server",
+      "web 服务",
+      "api"
+    ],
+    "crates": [
+      "axum",
+      "actix-web",
+      "hyper",
+      "leptos",
+      "rocket",
+      "poem"
+    ]
+  },
+  {
+    "category": "解析器",
+    "description": "Parse data formats or languages.",
+    "keywords": [
+      "解析",
+      "parse",
+      "parser",
+      "xml",
+      "sql",
+      "url"
+    ],
+    "crates": [
+      "quick-xml",
+      "simd-json",
+      "semver",
+      "uuid",
+      "sqlparser",
+      "url"
+    ]
+  },
+  {
+    "category": "算法",
+    "description": "Core algorithms such as hashing, sorting and searching.",
+    "keywords": [
+      "算法",
+      "hash",
+      "sort",
+      "search",
+      "algo",
+      "随机",
+      "random",
+      "rng",
+      "gen"
+    ],
+    "crates": [
+      "rand",
+      "crc",
+      "crypto-bigint",
+      "fastrand",
+      "strsim",
+      "rustc-hash"
+    ]
+  },
+  {
+    "category": "数学",
+    "description": "Solving problems involving math and logic.",
+    "keywords": [
+      "数学",
+      "矩阵",
+      "math",
+      "线性代数",
+      "矩阵运算",
+      "计算",
+      "matrix",
+      "num"
+    ],
+    "crates": [
+      "num-bigint",
+      "nalgebra",
+      "euclid",
+      "statrs",
+      "matrixmultiply",
+      "bigdecimal",
+      "num-traits"
+    ]
+  },
+  {
+    "category": "文件系统",
+    "description": "Crates for dealing with files and filesystems.",
+    "keywords": [
+      "文件",
+      "目录",
+      "文件系统",
+      "walk",
+      "watch",
+      "文件监控",
+      "file",
+      "path"
+    ],
+    "crates": [
+      "walkdir",
+      "notify",
+      "tempfile",
+      "directories",
+      "which",
+      "camino"
+    ]
+  },
+  {
+    "category": "数据结构",
+    "description": "Rust implementations of data structures for specific purposes.",
+    "keywords": [
+      "结构",
+      "数据",
+      "map",
+      "set",
+      "hashmap"
+    ],
+    "crates": [
+      "hashbrown",
+      "indexmap",
+      "smallvec",
+      "phf",
+      "ndarray"
+    ]
+  },
+  {
+    "category": "网络编程",
+    "description": "Network protocols such as FTP, HTTP, or SSH, or lower-level TCP or UDP.",
+    "keywords": [
+      "网络",
+      "tcp",
+      "udp",
+      "http",
+      "socket",
+      "network",
+      "协议"
+    ],
+    "crates": [
+      "tokio",
+      "tonic",
+      "socket2",
+      "quinn",
+      "async-graphql",
+      "rustls"
+    ]
+  },
+  {
+    "category": "异步",
+    "description": "Async program flow using techniques like futures, promises, waiting, or eventing.",
+    "keywords": [
+      "异步",
+      "async",
+      "future",
+      "tokio",
+      "并发"
+    ],
+    "crates": [
+      "tokio",
+      "futures",
+      "deadpool",
+      "async-trait",
+      "tokio-rustls"
+    ]
+  },
+  {
+    "category": "WebSocket",
+    "description": "Communicate over the WebSocket protocol.",
+    "keywords": [
+      "websocket",
+      "socket",
+      "ws"
+    ],
+    "crates": [
+      "bollard",
+      "tokio-tungstenite",
+      "jsonrpsee",
+      "tungstenite"
+    ]
+  },
+  {
+    "category": "密码学",
+    "description": "Algorithms intended for securing data.",
+    "keywords": [
+      "密码",
+      "加密",
+      "hash",
+      "sha",
+      "aes",
+      "rsa",
+      "安全"
+    ],
+    "crates": [
+      "curve25519-dalek",
+      "blake3",
+      "rustls",
+      "rsa",
+      "sha2",
+      "argon2"
+    ]
+  },
+  {
+    "category": "认证",
+    "description": "Help with the process of confirming identities.",
+    "keywords": [
+      "认证",
+      "登录",
+      "auth",
+      "jwt",
+      "密码"
+    ],
+    "crates": [
+      "jsonwebtoken",
+      "keyring",
+      "argon2"
+    ]
+  },
+  {
+    "category": "时间日期",
+    "description": "Dealing with the fourth dimension.",
+    "keywords": [
+      "时间",
+      "日期",
+      "时间戳",
+      "time",
+      "date"
+    ],
+    "crates": [
+      "chrono",
+      "humantime",
+      "chrono-tz",
+      "jiff"
+    ]
+  },
+  {
+    "category": "日志调试",
+    "description": "Figure out what is going on with your code via logging, tracing, or assertions.",
+    "keywords": [
+      "日志",
+      "log",
+      "tracing",
+      "调试",
+      "print"
+    ],
+    "crates": [
+      "tracing",
+      "env_logger",
+      "log",
+      "console-subscriber",
+      "prometheus"
+    ]
+  },
+  {
+    "category": "测试",
+    "description": "Verify the correctness of your code.",
+    "keywords": [
+      "测试",
+      "test",
+      "mock",
+      "proptest",
+      "assert"
+    ],
+    "crates": [
+      "insta",
+      "trybuild",
+      "proptest",
+      "wiremock",
+      "pretty_assertions",
+      "assert_cmd"
+    ]
+  },
+  {
+    "category": "GUI",
+    "description": "Create a graphical user interface.",
+    "keywords": [
+      "gui",
+      "界面",
+      "图形界面",
+      "窗口",
+      "窗口",
+      "window",
+      "ui"
+    ],
+    "crates": [
+      "gtk4",
+      "taffy",
+      "egui",
+      "softbuffer",
+      "wry",
+      "winit",
+      "iced",
+      "slint"
+    ]
+  },
+  {
+    "category": "机器学习",
+    "description": "AI, ML, NN, etc.",
+    "keywords": [
+      "机器学习",
+      "ai",
+      "神经网络",
+      "tensor",
+      "模型",
+      "onnx",
+      "model"
+    ],
+    "crates": [
+      "hf-hub",
+      "safetensors",
+      "tract-onnx",
+      "ort",
+      "burn",
+      "candle-nn"
+    ]
+  },
+  {
+    "category": "人工智能",
+    "description": "LLM/MCP/ACP/RAG",
+    "keywords": [
+      "人工智能",
+      "llm",
+      "大模型",
+      "chat",
+      "模型"
+    ],
+    "crates": [
+      "tokenizers",
+      "fastembed",
+      "genai",
+      "llama-cpp-2"
+    ]
+  },
+  {
+    "category": "WebAssembly",
+    "description": "Targeting or manipulating WebAssembly.",
+    "keywords": [
+      "wasm",
+      "webassembly"
+    ],
+    "crates": [
+      "wasm-bindgen",
+      "wasm-encoder",
+      "wasmparser",
+      "wit-bindgen"
+    ]
+  },
+  {
+    "category": "嵌入式",
+    "description": "For embedded devices or devices without an operating system.",
+    "keywords": [
+      "嵌入式",
+      "embedded",
+      "no_std"
+    ],
+    "crates": [
+      "portable-atomic",
+      "rhai",
+      "embedded-hal",
+      "embedded-io"
+    ]
+  },
+  {
+    "category": "命令行",
+    "description": "Argument parsers, line-editing, or output coloring and formatting.",
+    "keywords": [
+      "命令行",
+      "参数",
+      "clap",
+      "终端",
+      "tui",
+      "arg",
+      "cli"
+    ],
+    "crates": [
+      "colored",
+      "rustyline",
+      "crossterm",
+      "clap",
+      "ratatui"
+    ]
+  },
+  {
+    "category": "过程宏",
+    "description": "Extend Rust language with procedural macros.",
+    "keywords": [
+      "宏",
+      "macro",
+      "derive",
+      "proc"
+    ],
+    "crates": [
+      "syn",
+      "ctor",
+      "darling",
+      "quote"
+    ]
+  },
+  {
+    "category": "文本处理",
+    "description": "Deal with the complexities of human language when expressed in textual form.",
+    "keywords": [
+      "文本",
+      "text",
+      "字符串",
+      "正则",
+      "regex"
+    ],
+    "crates": [
+      "aho-corasick",
+      "regex",
+      "bstr",
+      "unicode-segmentation"
+    ]
+  },
+  {
+    "category": "并发",
+    "description": "Implementing concurrent and parallel computation.",
+    "keywords": [
+      "并发",
+      "parallel",
+      "线程",
+      "thread",
+      "并行",
+      "rayon"
+    ],
+    "crates": [
+      "parking_lot",
+      "rayon",
+      "spin",
+      "async-channel",
+      "ringbuf"
+    ]
+  },
+  {
+    "category": "FFI",
+    "description": "Interface with other languages. Includes binding generators.",
+    "keywords": [
+      "ffi",
+      "绑定",
+      "python",
+      "c",
+      "跨语言"
+    ],
+    "crates": [
+      "napi",
+      "uniffi",
+      "pyo3",
+      "jni",
+      "cxx",
+      "cbindgen",
+      "libloading"
+    ]
+  },
+  {
+    "category": "Cargo 插件",
+    "description": "Subcommands that extend the capabilities of Cargo.",
+    "keywords": [
+      "cargo",
+      "插件",
+      "lint",
+      "版本"
+    ],
+    "crates": [
+      "cargo-sort",
+      "cargo-hack",
+      "cargo-deny",
+      "cargo-expand"
+    ]
+  },
+  {
+    "category": "开发工具",
+    "description": "Testing, debugging, linting, performance profiling, formatting, and more.",
+    "keywords": [
+      "工具",
+      "lsp",
+      "lint",
+      "debug",
+      "profile"
+    ],
+    "crates": [
+      "object",
+      "kube",
+      "sqlformat"
+    ]
+  },
+  {
+    "category": "构建工具",
+    "description": "Utilities for build scripts and other build time steps.",
+    "keywords": [
+      "构建",
+      "build",
+      "编译",
+      "cmake",
+      "cc"
+    ],
+    "crates": [
+      "cc",
+      "pkg-config",
+      "cmake",
+      "vergen"
+    ]
+  },
+  {
+    "category": "Web 编程",
+    "description": "Create applications for the Web.",
+    "keywords": [
+      "web",
+      "网页",
+      "wasm",
+      "http",
+      "浏览器"
+    ],
+    "crates": [
+      "jsonschema",
+      "wgpu",
+      "httparse",
+      "web-sys",
+      "wasm-bindgen"
+    ]
+  },
+  {
+    "category": "硬件",
+    "description": "Interface with specific CPU or other hardware features.",
+    "keywords": [
+      "硬件",
+      "串口",
+      "serial",
+      "cpu",
+      "硬件"
+    ],
+    "crates": [
+      "memchr",
+      "serialport",
+      "crc32fast",
+      "num_cpus"
+    ]
+  },
+  {
+    "category": "操作系统",
+    "description": "Bindings to operating system-specific APIs.",
+    "keywords": [
+      "系统",
+      "os",
+      "进程",
+      "进程"
+    ],
+    "crates": [
+      "whoami",
+      "quanta",
+      "sysinfo"
+    ]
+  },
+  {
+    "category": "Unix API",
+    "description": "Bindings to Unix-specific APIs.",
+    "keywords": [
+      "unix",
+      "linux",
+      "信号",
+      "信号"
+    ],
+    "crates": [
+      "rustix",
+      "zbus",
+      "sysinfo",
+      "nix"
+    ]
+  },
+  {
+    "category": "Windows API",
+    "description": "Bindings to Windows-specific APIs.",
+    "keywords": [
+      "windows",
+      "win"
+    ],
+    "crates": [
+      "windows",
+      "winreg",
+      "winsafe"
+    ]
+  },
+  {
+    "category": "内存管理",
+    "description": "Allocation, memory mapping, garbage collection, reference counting.",
+    "keywords": [
+      "内存",
+      "memory",
+      "alloc"
+    ],
+    "crates": [
+      "bumpalo",
+      "arc-swap",
+      "memmap2",
+      "slab"
+    ]
+  },
+  {
+    "category": "图像",
+    "description": "Process or make graphics.",
+    "keywords": [
+      "图像",
+      "图片",
+      "png",
+      "jpeg",
+      "image"
+    ],
+    "crates": [
+      "image",
+      "qrcode",
+      "rgb",
+      "resvg"
+    ]
+  },
+  {
+    "category": "游戏开发",
+    "description": "Crates for creating games.",
+    "keywords": [
+      "游戏",
+      "game",
+      "3d",
+      "2d",
+      "引擎"
+    ],
+    "crates": [
+      "glam",
+      "bevy",
+      "tobi",
+      "avian3d",
+      "macroquad",
+      "ggez"
+    ]
+  },
+  {
+    "category": "财务",
+    "description": "Payments, accounting, trading using real money.",
+    "keywords": [
+      "财务",
+      "支付",
+      "金融",
+      "decimal"
+    ],
+    "crates": [
+      "rust_decimal",
+      "async-stripe"
+    ]
+  },
+  {
+    "category": "邮件",
+    "description": "Sending, receiving, formatting, and parsing email.",
+    "keywords": [
+      "邮件",
+      "email",
+      "smtp",
+      "imap"
+    ],
+    "crates": [
+      "lettre",
+      "mail-parser"
+    ]
+  }
+]

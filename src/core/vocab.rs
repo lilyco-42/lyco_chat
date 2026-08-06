@@ -79,12 +79,16 @@ impl Vocab {
             .collect::<Vec<_>>()
             .join(" ");
         let words: Vec<&str> = text.split_whitespace().collect();
-        let unique: Vec<_> = words
+        // Sort so the token -> index mapping is deterministic across
+        // processes (HashSet iteration order is randomized otherwise, which
+        // would break loading a saved model with a freshly built vocab).
+        let mut unique: Vec<&str> = words
             .iter()
             .copied()
             .collect::<HashSet<_>>()
             .into_iter()
             .collect();
+        unique.sort_unstable();
         let w2i: HashMap<_, _> = unique
             .iter()
             .enumerate()

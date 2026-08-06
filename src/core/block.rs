@@ -40,10 +40,12 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::attention::MultiHeadAttention;
-use crate::feed_forward::FeedForward;
-use crate::layer_norm::LayerNorm;
+use crate::core::attention::MultiHeadAttention;
+use crate::core::feed_forward::FeedForward;
+use crate::core::layer_norm::LayerNorm;
+use crate::core::linear::{Linear, LinearLike};
 use ndarray::Array2;
+use serde::{Deserialize, Serialize};
 
 /// Transformer block module.
 ///
@@ -56,15 +58,15 @@ use ndarray::Array2;
 /// * `ffn` - Feed-forward network
 /// * `ln1` - Layer norm before attention
 /// * `ln2` - Layer norm before feed-forward
-#[derive(Clone)]
-pub struct Block {
-    pub(crate) sa: MultiHeadAttention,
-    pub(crate) ffn: FeedForward,
+#[derive(Clone, Serialize, Deserialize)]
+pub struct Block<L: LinearLike = Linear> {
+    pub(crate) sa: MultiHeadAttention<L>,
+    pub(crate) ffn: FeedForward<L>,
     pub(crate) ln1: LayerNorm,
     pub(crate) ln2: LayerNorm,
 }
 
-impl Block {
+impl<L: LinearLike> Block<L> {
     /// Creates new transformer block.
     ///
     /// # Details
@@ -78,8 +80,8 @@ impl Block {
     /// * `Self` - Block instance
     pub fn new(d: usize, nh: usize) -> Self {
         Self {
-            sa: MultiHeadAttention::new(d, nh),
-            ffn: FeedForward::new(d),
+            sa: MultiHeadAttention::<L>::new(d, nh),
+            ffn: FeedForward::<L>::new(d),
             ln1: LayerNorm::new(d),
             ln2: LayerNorm::new(d),
         }
@@ -131,7 +133,7 @@ mod tests {
     /// Tests block creation.
     #[test]
     fn test_block_new() {
-        let b = Block::new(16, 4);
+        let b = Block::<Linear>::new(16, 4);
         assert_eq!(b.ln1.g.len(), 16);
         assert_eq!(b.ln2.g.len(), 16);
     }
@@ -139,7 +141,7 @@ mod tests {
     /// Tests block forward shape.
     #[test]
     fn test_block_forward_shape() {
-        let b = Block::new(8, 2);
+        let b = Block::<Linear>::new(8, 2);
         let x = arr2(&[[1.0; 8], [2.0; 8]]);
         let result = b.forward(&x);
         assert_eq!(result.shape(), &[2, 8]);
@@ -148,7 +150,7 @@ mod tests {
     /// Tests block forward produces finite values.
     #[test]
     fn test_block_forward_finite() {
-        let b = Block::new(8, 2);
+        let b = Block::<Linear>::new(8, 2);
         let x = arr2(&[[1.0; 8], [2.0; 8]]);
         let result = b.forward(&x);
         assert!(result.iter().all(|v| v.is_finite()));
@@ -157,7 +159,7 @@ mod tests {
     /// Tests block residual connection.
     #[test]
     fn test_block_residual() {
-        let b = Block::new(4, 1);
+        let b = Block::<Linear>::new(4, 1);
         let x = arr2(&[[1.0; 4]]);
         let result = b.forward(&x);
         // Output should be finite
@@ -167,7 +169,7 @@ mod tests {
     /// Tests block zero_grad.
     #[test]
     fn test_block_zero_grad() {
-        let mut b = Block::new(8, 2);
+        let mut b = Block::<Linear>::new(8, 2);
         b.sa.proj.dw.fill(1.0);
         b.ffn.l1.dw.fill(1.0);
         b.zero_grad();
@@ -178,7 +180,7 @@ mod tests {
     /// Tests block step.
     #[test]
     fn test_block_step() {
-        let mut b = Block::new(8, 2);
+        let mut b = Block::<Linear>::new(8, 2);
         let before = b.sa.proj.w[[0, 0]];
         b.sa.proj.dw.fill(1.0);
         b.step(0.1);
@@ -188,7 +190,7 @@ mod tests {
     /// Tests block clone.
     #[test]
     fn test_block_clone() {
-        let b1 = Block::new(8, 2);
+        let b1 = Block::<Linear>::new(8, 2);
         let b2 = b1.clone();
         assert_eq!(b1.ln1.g.len(), b2.ln1.g.len());
     }
@@ -196,7 +198,7 @@ mod tests {
     /// Tests dimension is preserved through block.
     #[test]
     fn test_block_dimension_preserved() {
-        let b = Block::new(16, 4);
+        let b = Block::<Linear>::new(16, 4);
         let x = arr2(&[[1.0; 16], [2.0; 16], [3.0; 16]]);
         let result = b.forward(&x);
         assert_eq!(result.shape(), &[3, 16]);

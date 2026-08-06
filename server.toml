@@ -1,0 +1,8 @@
+# 服务器配置
+model_path = "model/base_gpu.json"
+mode = "serve"
+train_backend = "cpu"
+steps = 0
+infer_backend = "cpu"
+question = "问 : 我需要打开文件"
+port = 8080

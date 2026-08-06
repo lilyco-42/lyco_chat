@@ -41,7 +41,7 @@
 //! UPDATE DATE: December 11, 2025
 
 use ndarray::Array1;
-use rand::{Rng, rngs::ThreadRng};
+use rand::{RngExt, rngs::ThreadRng};
 
 /// Samples index from probability distribution.
 ///

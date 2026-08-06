@@ -1,0 +1,22 @@
+# 微型GPT 启动配置
+# 启动: ./demo_chat --config demo_chat.toml   (或直接 ./demo_chat，自动读 demo_chat.toml)
+
+# 已训练的基模文件（仓库内置，不存在则按 train_backend 训练并保存）
+model_path = "model/base_gpu.json"
+
+# 运行模式: chat | serve | semantic | dict | concept | dynamic | moe | blocks
+mode = "chat"
+
+# 训练后端: cpu (ndarray) | candle (支持 CUDA/CPU，用显卡训练用 candle)
+train_backend = "cpu"
+# 训练步数，0 = 使用 src/config.json 的 epochs
+steps = 0
+
+# 推理后端: cpu (ndarray) | gpu (candle/cuda) | auto
+infer_backend = "cpu"
+
+# 要问的问题（chat / semantic / dict / concept / dynamic 模式用）
+question = "问 : 我需要打开文件"
+
+# serve 模式的端口
+port = 8080

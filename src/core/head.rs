@@ -40,9 +40,10 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::linear::Linear;
-use crate::math::softmax;
+use crate::core::linear::{Linear, LinearLike};
+use crate::core::math::softmax;
 use ndarray::Array2;
+use serde::{Deserialize, Serialize};
 
 /// Single attention head.
 ///
@@ -55,15 +56,15 @@ use ndarray::Array2;
 /// * `query` - Query projection layer
 /// * `value` - Value projection layer
 /// * `hs` - Head size (dimension per head)
-#[derive(Clone)]
-pub struct Head {
-    pub(crate) key: Linear,
-    pub(crate) query: Linear,
-    pub(crate) value: Linear,
-    hs: usize,
+#[derive(Clone, Serialize, Deserialize)]
+pub struct Head<L: LinearLike = Linear> {
+    pub(crate) key: L,
+    pub(crate) query: L,
+    pub(crate) value: L,
+    pub(crate) hs: usize,
 }
 
-impl Head {
+impl<L: LinearLike> Head<L> {
     /// Creates new attention head.
     ///
     /// # Details
@@ -77,9 +78,9 @@ impl Head {
     /// * `Self` - Head instance
     pub fn new(d: usize, hs: usize) -> Self {
         Self {
-            key: Linear::new(d, hs),
-            query: Linear::new(d, hs),
-            value: Linear::new(d, hs),
+            key: L::new(d, hs),
+            query: L::new(d, hs),
+            value: L::new(d, hs),
             hs,
         }
     }
@@ -143,14 +144,14 @@ mod tests {
     /// Tests head creation.
     #[test]
     fn test_head_new() {
-        let h = Head::new(16, 4);
+        let h = Head::<Linear>::new(16, 4);
         assert_eq!(h.hs, 4);
     }
 
     /// Tests head forward output shape.
     #[test]
     fn test_head_forward_shape() {
-        let h = Head::new(8, 2);
+        let h = Head::<Linear>::new(8, 2);
         let x = arr2(&[[1.0; 8], [2.0; 8], [3.0; 8]]);
         let result = h.forward(&x);
         assert_eq!(result.shape(), &[3, 2]);
@@ -159,7 +160,7 @@ mod tests {
     /// Tests head forward produces finite values.
     #[test]
     fn test_head_forward_finite() {
-        let h = Head::new(8, 2);
+        let h = Head::<Linear>::new(8, 2);
         let x = arr2(&[[1.0; 8], [2.0; 8]]);
         let result = h.forward(&x);
         assert!(result.iter().all(|x| x.is_finite()));
@@ -168,7 +169,7 @@ mod tests {
     /// Tests head zero_grad.
     #[test]
     fn test_head_zero_grad() {
-        let mut h = Head::new(4, 2);
+        let mut h = Head::<Linear>::new(4, 2);
         h.key.dw.fill(1.0);
         h.query.dw.fill(1.0);
         h.value.dw.fill(1.0);
@@ -181,7 +182,7 @@ mod tests {
     /// Tests head step updates parameters.
     #[test]
     fn test_head_step() {
-        let mut h = Head::new(4, 2);
+        let mut h = Head::<Linear>::new(4, 2);
         let before_key = h.key.w[[0, 0]];
         h.key.dw.fill(1.0);
         h.step(0.1);
@@ -191,7 +192,7 @@ mod tests {
     /// Tests head clone.
     #[test]
     fn test_head_clone() {
-        let h1 = Head::new(8, 4);
+        let h1 = Head::<Linear>::new(8, 4);
         let h2 = h1.clone();
         assert_eq!(h1.hs, h2.hs);
     }
@@ -199,7 +200,7 @@ mod tests {
     /// Tests causal masking (future tokens should not attend).
     #[test]
     fn test_head_causal_mask() {
-        let h = Head::new(4, 2);
+        let h = Head::<Linear>::new(4, 2);
         let x = arr2(&[[1.0; 4], [1.0; 4], [1.0; 4]]);
         let result = h.forward(&x);
         // Result should be finite (mask applied correctly)
@@ -209,7 +210,7 @@ mod tests {
     /// Tests single sequence element.
     #[test]
     fn test_head_single_element() {
-        let h = Head::new(4, 2);
+        let h = Head::<Linear>::new(4, 2);
         let x = arr2(&[[1.0; 4]]);
         let result = h.forward(&x);
         assert_eq!(result.shape(), &[1, 2]);

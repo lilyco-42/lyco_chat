@@ -40,9 +40,9 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::config::CFG;
-use crate::data::DataLoader;
-use crate::tiny_gpt::{TinyGPT, cross_entropy};
+use crate::core::config::CFG;
+use crate::core::data::DataLoader;
+use crate::core::tiny_gpt::{TinyGPT, cross_entropy};
 use rand::rngs::ThreadRng;
 
 /// Trainer for TinyGPT model.
@@ -274,7 +274,7 @@ mod tests {
     /// Tests integration with vocab.
     #[test]
     fn test_trainer_with_vocab() {
-        use crate::vocab::Vocab;
+        use crate::core::vocab::Vocab;
         // Need enough words for batch_size * block_size
         let corpus = vec![
             "hello world test one two three four five six seven eight nine ten".to_string(),

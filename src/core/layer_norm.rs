@@ -40,8 +40,9 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::math::layer_norm;
+use crate::core::math::layer_norm;
 use ndarray::{Array1, Array2};
+use serde::{Deserialize, Serialize};
 
 /// Layer normalization module.
 ///
@@ -52,7 +53,7 @@ use ndarray::{Array1, Array2};
 /// # Fields
 /// * `g` - Gamma (scale) parameter
 /// * `b` - Beta (shift) parameter
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct LayerNorm {
     pub g: Array1<f32>,
     pub b: Array1<f32>,

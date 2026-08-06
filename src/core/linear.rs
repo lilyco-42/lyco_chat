@@ -40,8 +40,46 @@
 //! CREATION DATE: December 11, 2025
 //! UPDATE DATE: December 11, 2025
 
-use crate::math::randn;
+use crate::core::math::randn;
 use ndarray::{Array1, Array2};
+use serde::{Deserialize, Serialize};
+
+/// Trait for linear layers usable inside transformer modules.
+///
+/// # Details
+/// Implemented by both `Linear` (full precision) and `BitLinear` (ternary
+/// quantized), allowing transformer blocks to be instantiated with either.
+pub trait LinearLike: Clone {
+    /// Creates a new layer with random initialization.
+    fn new(i: usize, o: usize) -> Self;
+
+    /// Computes forward pass `y = xW + b`.
+    fn forward(&self, x: &Array2<f32>) -> Array2<f32>;
+
+    /// Zeros gradient accumulators.
+    fn zero_grad(&mut self);
+
+    /// Updates parameters with gradient descent.
+    fn step(&mut self, lr: f32);
+}
+
+impl LinearLike for Linear {
+    fn new(i: usize, o: usize) -> Self {
+        Linear::new(i, o)
+    }
+
+    fn forward(&self, x: &Array2<f32>) -> Array2<f32> {
+        Linear::forward(self, x)
+    }
+
+    fn zero_grad(&mut self) {
+        Linear::zero_grad(self)
+    }
+
+    fn step(&mut self, lr: f32) {
+        Linear::step(self, lr)
+    }
+}
 
 /// Linear layer for neural network.
 ///
@@ -54,7 +92,7 @@ use ndarray::{Array1, Array2};
 /// * `b` - Bias vector
 /// * `dw` - Weight gradient
 /// * `db` - Bias gradient
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct Linear {
     pub w: Array2<f32>,
     pub b: Array1<f32>,
