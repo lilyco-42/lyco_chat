@@ -1,15 +1,38 @@
 [package]
-name = "demo_chat"
+name = "lyco_chat"
 version = "0.1.0"
 edition = "2024"
+description = "微型GPT —— Rust 标准库双语学习助手（Transformer + BitNet + MoE + 知识路由问答）"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/lilyco-42/lyco_chat"
+keywords = ["gpt", "transformer", "rust", "bitnet", "moe", "llm", "learning"]
+categories = ["mathematics", "science::neuroscience"]
+exclude = ["data/washed/**", "model/**"]
+
+# cargo-binstall: 从 GitHub Release 下载预编译二进制
+# 资产命名与 release.yml 的 archive: lyco_chat-$tag-$target 一致
+[package.metadata.binstall]
+pkg-url = "https://github.com/lilyco-42/lyco_chat/releases/download/{tag}/lyco_chat-{tag}-{target}.{archive-format}"
+
+[[bin]]
+name = "demo_chat"
+path = "src/main.rs"
+
+[features]
+default = []
+# GPU 训练/推理：需要本地 CUDA 工具链。发布版默认关闭（纯 CPU）。
+# 本地 GPU 构建：cargo build --release --features cuda
+# （配合 .cargo/config.toml 里的 [patch.crates-io] 指向 candle git，见 README）
+cuda = ["candle-core/cuda", "candle-nn/cuda"]
 
 [dependencies]
 anyhow = "1.0.104"
 ast-grep = "0.45"
 ast-grep-core = "0.45"
 ast-grep-language = "0.45"
-candle-core = { git = "https://github.com/huggingface/candle.git", version = "0.11.0", features = ["cuda"] }
-candle-nn = { git = "https://github.com/huggingface/candle.git", version = "0.11.0" }
+candle-core = { version = "0.11.0", default-features = false }
+candle-nn = { version = "0.11.0", default-features = false }
 futures-util = "0.3.33"
 home = "0.5"
 jieba-rs = "0.7"

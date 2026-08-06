@@ -88,6 +88,59 @@ cargo build --release -j 8
 
 ---
 
+## 安装与发布
+
+### crates.io 安装（源码编译）
+
+```bash
+cargo install lyco_chat
+# 二进制为 demo_chat；GPU 版：cargo install lyco_chat --features cuda（需本地 CUDA）
+```
+
+### cargo-binstall（预编译二进制，秒装）
+
+```bash
+cargo binstall lyco_chat
+```
+
+打 `v*` tag 后，GitHub Actions 会把各平台预编译产物上传到 Release（命名
+`lyco_chat-{tag}-{target}.tar.gz/.zip`，与 `[package.metadata.binstall]` 对齐）。
+
+### 交叉编译目标
+
+| 平台 | target | 构建方式 |
+|---|---|---|
+| Linux x86_64 / aarch64 | `x86_64-unknown-linux-gnu` / `aarch64-unknown-linux-gnu` | cargo-zigbuild |
+| Android（Termux 用 aarch64） | `aarch64-linux-android` / `armv7-linux-androideabi` / `x86_64-linux-android` | cargo-zigbuild |
+| Windows | `x86_64-pc-windows-msvc` / `aarch64-pc-windows-msvc` | 本机 MSVC |
+| macOS | `aarch64-apple-darwin` / `x86_64-apple-darwin` / universal(lipo) | Xcode |
+| iOS | `aarch64-apple-ios` / 模拟器 universal | Xcode |
+
+Termux 用户直接下载 **aarch64-linux-android** 的 `lyco_chat-*.tar.gz` 即可运行，
+或在 Termux 里 `pkg install zig` 后用 `cargo install lyco_chat` 原生编译。
+
+### 发布流程（GitHub Actions，见 `.github/workflows/release.yml`）
+
+1. `git tag v0.1.0 && git push --tags`
+2. workflow 自动：`create-gh-release-action` 建 Release → `upload-rust-binary-action`
+   交叉编译 12 个目标并上传（含 sha256）→ `cargo publish` 发 crates.io
+3. 首次发布前：在仓库 Secrets 配置 `CARGO_REGISTRY_TOKEN`（需 crates.io 账号的
+   `publish` 权限 token），并把默认分支暴露给 `environment: crates-io`
+
+### 本地 GPU（CUDA）构建
+
+发布版默认是纯 CPU（crates.io 的 candle）。本地 GPU 训练/推理：
+
+```bash
+# .cargo/config.toml 已把 candle 指回 git 提交（含 CUDA 13 兼容补丁）
+cargo build --release --features cuda
+```
+
+> `.cargo/` 与 `model/`、`data/washed/` 不入库，因此 CI / crates.io 安装
+> 用的是 crates.io candle（CPU），交叉编译也完全不依赖 CUDA。
+
+---
+
 ## 试问
 
 | 提问 | 回答 |

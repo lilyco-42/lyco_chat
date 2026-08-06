@@ -433,7 +433,7 @@ checksum = "fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04"
 [[package]]
 name = "candle-core"
 version = "0.11.0"
-source = "git+https://github.com/huggingface/candle.git#6e823a4306ac1c65b88b924b762ad656a8d4c216"
+source = "git+https://github.com/huggingface/candle.git?rev=6e823a4#6e823a4306ac1c65b88b924b762ad656a8d4c216"
 dependencies = [
  "byteorder",
  "candle-kernels",
@@ -461,7 +461,7 @@ dependencies = [
 [[package]]
 name = "candle-kernels"
 version = "0.11.0"
-source = "git+https://github.com/huggingface/candle.git#6e823a4306ac1c65b88b924b762ad656a8d4c216"
+source = "git+https://github.com/huggingface/candle.git?rev=6e823a4#6e823a4306ac1c65b88b924b762ad656a8d4c216"
 dependencies = [
  "cudaforge",
 ]
@@ -469,7 +469,7 @@ dependencies = [
 [[package]]
 name = "candle-nn"
 version = "0.11.0"
-source = "git+https://github.com/huggingface/candle.git#6e823a4306ac1c65b88b924b762ad656a8d4c216"
+source = "git+https://github.com/huggingface/candle.git?rev=6e823a4#6e823a4306ac1c65b88b924b762ad656a8d4c216"
 dependencies = [
  "candle-core",
  "half",
@@ -484,7 +484,7 @@ dependencies = [
 [[package]]
 name = "candle-ug"
 version = "0.11.0"
-source = "git+https://github.com/huggingface/candle.git#6e823a4306ac1c65b88b924b762ad656a8d4c216"
+source = "git+https://github.com/huggingface/candle.git?rev=6e823a4#6e823a4306ac1c65b88b924b762ad656a8d4c216"
 dependencies = [
  "ug",
  "ug-cuda",
@@ -935,31 +935,6 @@ dependencies = [
  "lock_api",
  "once_cell",
  "parking_lot_core",
-]
-
-[[package]]
-name = "demo_chat"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "ast-grep",
- "ast-grep-core",
- "ast-grep-language",
- "candle-core",
- "candle-nn",
- "futures-util",
- "home",
- "jieba-rs",
- "ndarray",
- "once_cell",
- "rand 0.10.2",
- "rand_distr 0.6.0",
- "rayon",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "toml",
 ]
 
 [[package]]
@@ -2227,6 +2202,31 @@ dependencies = [
  "percent-encoding",
  "serde",
  "serde_json",
+]
+
+[[package]]
+name = "lyco_chat"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "ast-grep",
+ "ast-grep-core",
+ "ast-grep-language",
+ "candle-core",
+ "candle-nn",
+ "futures-util",
+ "home",
+ "jieba-rs",
+ "ndarray",
+ "once_cell",
+ "rand 0.10.2",
+ "rand_distr 0.6.0",
+ "rayon",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "toml",
 ]
 
 [[package]]
