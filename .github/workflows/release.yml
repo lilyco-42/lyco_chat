@@ -39,6 +39,8 @@ jobs:
     # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    permissions:
+      contents: write
     name: linux-${{ matrix.target }}
     runs-on: ubuntu-latest
     strategy:
@@ -71,6 +73,8 @@ jobs:
     # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    permissions:
+      contents: write
     name: android-${{ matrix.target }}
     runs-on: ubuntu-latest
     strategy:
@@ -102,6 +106,8 @@ jobs:
     # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    permissions:
+      contents: write
     name: windows-${{ matrix.target }}
     runs-on: windows-latest
     strategy:
@@ -130,6 +136,8 @@ jobs:
     # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    permissions:
+      contents: write
     name: macos-${{ matrix.target }}
     runs-on: macos-14
     strategy:
@@ -158,6 +166,8 @@ jobs:
     # 等 Release 创建（tag 时）；always() 让 dispatch 也能 dry-run 编译
     if: always()
     needs: create-release
+    permissions:
+      contents: write
     name: ios-${{ matrix.target }}
     runs-on: macos-14
     strategy:
