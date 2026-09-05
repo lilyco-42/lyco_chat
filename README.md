@@ -260,6 +260,11 @@ cargo run -q --release --bin demo_chat -- --config toolcall_chat.toml
 `tools_openai.json`（OpenAI tools 数组，供运行时系统提示词注入）。
 配置样例见 `toolcall_chat.toml`。
 
+> **训练量提示**：400/2000 步冒烟只能验证管线（loss 7.2→4.5，模型已开始在
+> 问句后生成 `{` 结构 token）。要稳定输出完整 tool_call JSON 需完整训练
+> （`steps = 0` 走默认 15000 epochs，CPU 约 4-5 小时；或 `train_backend = "gpu"`
+> 走 candle）。冒烟产物 `model/toolcall_smoke.json` 已 gitignore。
+
 `model/` 与 `data/washed/` 体积较大，不入库，可用上面工具重新生成。
 
 ---
