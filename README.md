@@ -226,6 +226,8 @@ cargo build --release --features cuda    # 本地 GPU（需 CUDA 12+/13.0）
 | `data/crate_tags.json` | 196 个 crate 的标签神经元 |
 | `data/librs_categories.json` | lib.rs 41+ 分类 |
 | `data/learned.json` | Learner 自动学到的新词 |
+| `toolcall_corpus.json` | lilyco 工具调用协议语料（48 行，`tools/gen_toolcall_corpus.py` 生成） |
+| `tools_openai.json` | OpenAI tools 数组（lilyco 工具清单 → 运行时提示词） |
 
 重新生成语料：
 
@@ -235,6 +237,28 @@ python3 tools/gen_corpus.py        # 汇总语料 + 词典
 python3 tools/fetch_crate_tags.py  # 抓 crate 标签
 python3 tools/fetch_top_crates.py  # 抓常用 crate 关键词
 ```
+
+### 工具调用语料（lilyco 协议格式）
+
+教模型输出**标准 AI 工具调用格式**：从 lilyco 应用的 `--schema` 清单生成
+"用户意图 → OpenAI tool_call JSON" 语料（中文逐字切分，与 `seg_tokens`/
+词表完全对齐；答侧 JSON 全空格展开，每个 token 可独立学习）：
+
+```bash
+# 1. 从任意 lilyco 应用导出工具清单（多命令用 multi --schema）
+cd ../lilyco && cargo run -q -p lilyco-example --example multi -- --schema > /tmp/manifest.json
+
+# 2. 生成语料（含自检：答侧 JSON 可解析、问侧无引号）
+python3 tools/gen_toolcall_corpus.py --schema /tmp/manifest.json --per-command 12
+
+# 3. 合并进主语料并训练
+python3 -c "import json; base=json.load(open('corpus.json',encoding='utf-8')); tool=json.load(open('toolcall_corpus.json',encoding='utf-8')); base+= [l for l in tool if l not in base]; json.dump(base,open('corpus.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)"
+cargo run -q --release --bin demo_chat -- --config toolcall_chat.toml
+```
+
+产物：`toolcall_corpus.json`（问→tool_call JSON + 工具结果→答复）、
+`tools_openai.json`（OpenAI tools 数组，供运行时系统提示词注入）。
+配置样例见 `toolcall_chat.toml`。
 
 `model/` 与 `data/washed/` 体积较大，不入库，可用上面工具重新生成。
 

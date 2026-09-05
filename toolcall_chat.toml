@@ -1,0 +1,7 @@
+model_path = "model/toolcall_smoke.json"
+mode = "chat"
+train_backend = "cpu"
+steps = 2000
+infer_backend = "cpu"
+question = "请执行 ping name world48"
+port = 8080

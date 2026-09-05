@@ -1,0 +1,47 @@
+[
+ {
+  "type": "function",
+  "function": {
+   "name": "add",
+   "description": "两数相加",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "number",
+      "description": "第一个数"
+     },
+     "b": {
+      "type": "number",
+      "description": "第二个数"
+     },
+     "verbose": {
+      "type": "boolean",
+      "description": "分步上报进度"
+     }
+    },
+    "required": [
+     "a",
+     "b"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "ping",
+   "description": "向某人问好",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string",
+      "description": "问谁"
+     }
+    },
+    "required": []
+   }
+  }
+ }
+]
