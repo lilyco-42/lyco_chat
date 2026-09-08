@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="docs/banner.svg" width="720" alt="banner">
+</div>
+
+<div align="center">
 
 # 微型GPT · lyco_chat
 
